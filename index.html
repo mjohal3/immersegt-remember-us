@@ -9,9 +9,12 @@
     <script src = "info-panel.js"></script>
     <script src="https://unpkg.com/@editvr/aframe-dialog-popup-component@1.7.2/dist/aframe-dialog-popup-component.min.js"></script>
     <script src="https://unpkg.com/@fern-solutions/aframe-mirror/dist/mirror.umd.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-animation-component@4.2.0/dist/aframe-animation-component.min.js"></script>
   </head>
   <body>
-<a-scene name="KanauScene" cursor="rayOrigin: mouse">
+<a-scene name="KanauScene" cursor="rayOrigin: mouse" joystick="" shadow="type: basic; autoUpdate: false;" renderer="antialias: false; colorManagement: false; physicallyCorrectLights: false;" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
   <a-assets>
     <img id="vibing" src="manvibin.jpg"/>
     <img id="bestfriend" src="manwbestfriend.jpg"/>
@@ -39,6 +42,8 @@
           position="0 0.495 0.002"
          >
         </a-mixin>
+          <a-asset-item id="model" src="https://models.readyplayer.me/6432b7d749d69ed90a6f428b.glb"></a-asset-item>
+        <a-asset-item id="avocado" src="https://models.readyplayer.me/6432b7d749d69ed90a6f428b.glb"></a-asset-item>
     <a-asset-item id="manvibin-obj" src="./models/manvibin.obj"></a-asset-item>
     <a-asset-item id="manvibin-mtl" src="./models/manvibin.lib"></a-asset-item>
     <a-asset-item id="BG-obj" src="./models/BG.obj"></a-asset-item>
@@ -443,10 +448,21 @@
   <a-sky radius="5000" color="#9FBBE9"></a-sky>
   <a-light position="0 16.8 0" rotation="-56.37999 -285.8 -9.251951E-06" name="Directional Light" type="directional" color="#FFE7BE"></a-light>
   <!-- <a-camera position="5.016342 4.131145 2.303604"  cursor-color=#FFFF58 wasd-controls-enabled=true fov=60   cursor-offset=1 cursor-opacity=1 cursor-scale1 look-controls-enabled=true></a-camera> -->
-  <a-entity camera look-controls wasd-controls="acceleration:20" position="5.016342 4.131145 2.303604"></a-entity>
-
-
-  <!-- <a-entity position="41.30866 -28.04836 53.56039" name="Cameras">
+  
+  <!-- <a-entity camera look-controls wasd-controls="acceleration:100" position="-3.0916342 4.131145 -1.303604"></a-entity> -->
+   <!-- <a-camera>
+    <a-entity position="0 -.2 .015" gltf-model="#avocado" scale = ".12 .12 .12" rotation = "0 -180 0"></a-entity>
+    <a-entity camera look-controls wasd-controls="acceleration:100" position="-3.0916342 4.131145 -1.303604"></a-entity>
+  </a-camera> -->
+  <a-entity id="player" position="-3.0916342 2.131145 -1.303604" movement-controls="speed: 0.2000000149011612;" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
+    <a-entity id="camera" camera="near: 0.001" position="0 1.7000000476837158 0" look-controls="pointerLockEnabled: true" rotation="">
+            <a-entity id="cursor" cursor="fuse: false;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 	0.1 0.1 0.1; to: 1 1 1" position="0 0 -0.1" geometry="primitive: circle; radius: 0.001;" material="color: #CCC; shader: flat;" raycaster="">
+            </a-entity>
+    </a-entity>
+        <a-entity id="leftHand" oculus-touch-controls="hand: left" vive-controls="hand: left"></a-entity>
+        <a-entity id="rightHand" laser-controls="" oculus-touch-controls="hand: right" vive-controls="hand: right" daydream-controls="" gearvr-controls="" magicleap-controls="" oculus-go-controls="" valve-index-controls="" vive-focus-controls="" windows-motion-controls="" generic-tracked-controller-controls=""></a-entity>
+</a-entity>
+<a-plane src="#vibing" position="-3.759 4.1275 0.454" scale=".2 .2 .2" rotation="0 180 0"></a-plane>  <!-- <a-entity position="41.30866 -28.04836 53.56039" name="Cameras">
     <a-entity position="-36.9 38.2 -58.1" rotation="-62.39999 -270 -1.47426E-05" name="Camera1" tag="MainCamera">
       <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
         <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
@@ -489,7 +505,7 @@
     </a-entity>
   </a-entity> -->
   <a-entity name="BG">
-    <a-entity position="-1.25 -0.36944 -4.37" scale="0.2340183 1 0.2792866" name="BG" obj-model="obj: #BG-obj; mtl: #BG-mtl" visible = "true"></a-entity>
+    <a-entity scale = "1 1 1" position="-1.25 -0.36944 -10.37" scale="0.2340183 1 0.2792866" name="BG" obj-model="obj: #BG-obj; mtl: #BG-mtl" visible = "true"></a-entity>
   </a-entity>
   <a-entity position="0 -0.1 0" name="Props_01">
     <a-entity position="-1.741 0.173 -10.143" rotation="0 -85.80342 0" name="BarChair_02" obj-model="obj: #BarChair_02-obj; mtl: #BarChair_02-mtl" visible = "true"></a-entity>
@@ -890,6 +906,7 @@
     <a-entity position="-5.906 4.712184 -2.809" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
     <a-entity position="-0.463 4.712184 -2.919" rotation="0 -45.57975 0" name="Flower_03" obj-model="obj: #Flower_03-obj; mtl: #Flower_03-mtl" visible = "true"></a-entity>
     <a-entity id = "BestMirror" position="-0.074 5.838 -2.148" rotation="0 -270 0" name="Mirror_02" obj-model="obj: #Mirror_02-obj; mtl: #Mirror_02-mtl" visible = "true"></a-entity>
+    <a-mirror position = "-.674 5.838 -2.148" rotation="0 -270 0" scale = "1 1 1"></a-mirror>
     <a-entity position="-0.081 6.633 -0.399" rotation="0 -270 0" name="Clock_04" obj-model="obj: #Clock_04-obj; mtl: #Clock_04-mtl" visible = "true"></a-entity>
     <a-entity position="-6.524 4.988602 -2.152" rotation="0 -180 0" name="Socket_02" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
     <a-entity id = "BestTV" position="-2.68 5.685 -2.979" scale="0.77049 0.77049 0.77049" rotation="0 -180 0" name="TV" obj-model="obj: #TV-obj; mtl: #TV-mtl" visible = "true"></a-entity>
@@ -1067,5 +1084,6 @@
         </a-entity>
   </a-entity>
 </a-scene>
+
 </body>
 </html>
