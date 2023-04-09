@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello world!</title>
+    <meta name="description" content="Hello world!">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  </head>
+  <body>
+<a-scene name="KanauScene">
+    <a-asset-item id="BG-obj" src="unityexport3.obj"></a-asset-item>
+    <a-asset-item id="BG-mtl" src="unityexport3.mtl"></a-asset-item>
+    <a-entity position="0 0 0" name="Light_05" obj-model="obj: #BG-obj; mtl: #BG-mtl" visible = "true"></a-entity>
+</a-scene>

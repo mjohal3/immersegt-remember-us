@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello world!</title>
+    <meta name="description" content="Hello world!">
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src = "highlight.js"></script>
+    <script src = "info-panel.js"></script>
+    <script src="https://unpkg.com/@editvr/aframe-dialog-popup-component@1.7.2/dist/aframe-dialog-popup-component.min.js"></script>
+    <script src="https://unpkg.com/@fern-solutions/aframe-mirror/dist/mirror.umd.min.js"></script>
+  </head>
+  <body>
+<a-scene name="KanauScene" cursor="rayOrigin: mouse">
+  <a-assets>
+    <img id="vibing" src="manvibin.jpg"/>
+    <img id="bestfriend" src="manwbestfriend.jpg"/>
+    <img id="daughter" src="manwdaughter.jpg"/>
+    <img id="grandkid" src="manwgrandkid.jpg"/>
+
+    <a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+         ></a-mixin>
+         <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          material="shader: flat"
+          position="0 0 0.005"
+         ></a-mixin>
+         <a-mixin
+          id="movieImage"
+          geometry="primitive: plane; width: 1.5; height: 0.81"
+          material="src: #vibing; shader: flat; transparent: true"
+          position="0 0.495 0.002"
+         >
+        </a-mixin>
+    <a-asset-item id="manvibin-obj" src="./models/manvibin.obj"></a-asset-item>
+    <a-asset-item id="manvibin-mtl" src="./models/manvibin.lib"></a-asset-item>
+    <a-asset-item id="BG-obj" src="./models/BG.obj"></a-asset-item>
+    <a-asset-item id="BG-mtl" src="./models/BG.mtl"></a-asset-item>
+    <a-asset-item id="BarChair_02-obj" src="./models/BarChair_02.obj"></a-asset-item>
+    <a-asset-item id="BarChair_02-mtl" src="./models/BarChair_02.mtl"></a-asset-item>
+    <a-asset-item id="RangeHood-obj" src="./models/RangeHood.obj"></a-asset-item>
+    <a-asset-item id="RangeHood-mtl" src="./models/RangeHood.mtl"></a-asset-item>
+    <a-asset-item id="Oven-obj" src="./models/Oven.obj"></a-asset-item>
+    <a-asset-item id="Oven-mtl" src="./models/Oven.mtl"></a-asset-item>
+    <a-asset-item id="KitchenCorner_02-obj" src="./models/KitchenCorner_02.obj"></a-asset-item>
+    <a-asset-item id="KitchenCorner_02-mtl" src="./models/KitchenCorner_02.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_03-obj" src="./models/KitchenTabletop2_03.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_03-mtl" src="./models/KitchenTabletop2_03.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_07-obj" src="./models/KitchenTabletop2_07.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_07-mtl" src="./models/KitchenTabletop2_07.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_01-obj" src="./models/KitchenTabletop2_01.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_01-mtl" src="./models/KitchenTabletop2_01.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_02-obj" src="./models/KitchenTabletop2_02.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_02-mtl" src="./models/KitchenTabletop2_02.mtl"></a-asset-item>
+    <a-asset-item id="Bar_02-obj" src="./models/Bar_02.obj"></a-asset-item>
+    <a-asset-item id="Bar_02-mtl" src="./models/Bar_02.mtl"></a-asset-item>
+    <a-asset-item id="Refrigerator-obj" src="./models/Refrigerator.obj"></a-asset-item>
+    <a-asset-item id="Refrigerator-mtl" src="./models/Refrigerator.mtl"></a-asset-item>
+    <a-asset-item id="KitchenChair_02-obj" src="./models/KitchenChair_02.obj"></a-asset-item>
+    <a-asset-item id="KitchenChair_02-mtl" src="./models/KitchenChair_02.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTable_02-obj" src="./models/KitchenTable_02.obj"></a-asset-item>
+    <a-asset-item id="KitchenTable_02-mtl" src="./models/KitchenTable_02.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_06-obj" src="./models/KitchenTabletop2_06.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_06-mtl" src="./models/KitchenTabletop2_06.mtl"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_04-obj" src="./models/KitchenTabletop2_04.obj"></a-asset-item>
+    <a-asset-item id="KitchenTabletop2_04-mtl" src="./models/KitchenTabletop2_04.mtl"></a-asset-item>
+    <a-asset-item id="SwitchLight-obj" src="./models/SwitchLight.obj"></a-asset-item>
+    <a-asset-item id="SwitchLight-mtl" src="./models/SwitchLight.mtl"></a-asset-item>
+    <a-asset-item id="Socket_02-obj" src="./models/Socket_02.obj"></a-asset-item>
+    <a-asset-item id="Socket_02-mtl" src="./models/Socket_02.mtl"></a-asset-item>
+    <a-asset-item id="Catpet_04-obj" src="./models/Catpet_04.obj"></a-asset-item>
+    <a-asset-item id="Catpet_04-mtl" src="./models/Catpet_04.mtl"></a-asset-item>
+    <a-asset-item id="Hook_02-obj" src="./models/Hook_02.obj"></a-asset-item>
+    <a-asset-item id="Hook_02-mtl" src="./models/Hook_02.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_03-obj" src="./models/RoomFurniture_03.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_03-mtl" src="./models/RoomFurniture_03.mtl"></a-asset-item>
+    <a-asset-item id="SmartHome-obj" src="./models/SmartHome.obj"></a-asset-item>
+    <a-asset-item id="SmartHome-mtl" src="./models/SmartHome.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_15-obj" src="./models/Curtains_15.obj"></a-asset-item>
+    <a-asset-item id="Curtains_15-mtl" src="./models/Curtains_15.mtl"></a-asset-item>
+    <a-asset-item id="Plate_05-obj" src="./models/Plate_05.obj"></a-asset-item>
+    <a-asset-item id="Plate_05-mtl" src="./models/Plate_05.mtl"></a-asset-item>
+    <a-asset-item id="Flower_07-obj" src="./models/Flower_07.obj"></a-asset-item>
+    <a-asset-item id="Flower_07-mtl" src="./models/Flower_07.mtl"></a-asset-item>
+    <a-asset-item id="Flower_03-obj" src="./models/Flower_03.obj"></a-asset-item>
+    <a-asset-item id="Flower_03-mtl" src="./models/Flower_03.mtl"></a-asset-item>
+    <a-asset-item id="Pillow_03-obj" src="./models/Pillow_03.obj"></a-asset-item>
+    <a-asset-item id="Pillow_03-mtl" src="./models/Pillow_03.mtl"></a-asset-item>
+    <a-asset-item id="Socket_01-obj" src="./models/Socket_01.obj"></a-asset-item>
+    <a-asset-item id="Socket_01-mtl" src="./models/Socket_01.mtl"></a-asset-item>
+    <a-asset-item id="PhotoFrame-obj" src="./models/PhotoFrame.obj"></a-asset-item>
+    <a-asset-item id="PhotoFrame-mtl" src="./models/PhotoFrame.mtl"></a-asset-item>
+    <a-asset-item id="Candle_01-obj" src="./models/Candle_01.obj"></a-asset-item>
+    <a-asset-item id="Candle_01-mtl" src="./models/Candle_01.mtl"></a-asset-item>
+    <a-asset-item id="Candle_02-obj" src="./models/Candle_02.obj"></a-asset-item>
+    <a-asset-item id="Candle_02-mtl" src="./models/Candle_02.mtl"></a-asset-item>
+    <a-asset-item id="Clock_03-obj" src="./models/Clock_03.obj"></a-asset-item>
+    <a-asset-item id="Clock_03-mtl" src="./models/Clock_03.mtl"></a-asset-item>
+    <a-asset-item id="TV_Shelf-obj" src="./models/TV_Shelf.obj"></a-asset-item>
+    <a-asset-item id="TV_Shelf-mtl" src="./models/TV_Shelf.mtl"></a-asset-item>
+    <a-asset-item id="TV_Remote-obj" src="./models/TV_Remote.obj"></a-asset-item>
+    <a-asset-item id="TV_Remote-mtl" src="./models/TV_Remote.mtl"></a-asset-item>
+    <a-asset-item id="TV-obj" src="./models/TV.obj"></a-asset-item>
+    <a-asset-item id="TV-mtl" src="./models/TV.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_05-obj" src="./models/RoomFurniture_05.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_05-mtl" src="./models/RoomFurniture_05.mtl"></a-asset-item>
+    <a-asset-item id="RoomTable_01-obj" src="./models/RoomTable_01.obj"></a-asset-item>
+    <a-asset-item id="RoomTable_01-mtl" src="./models/RoomTable_01.mtl"></a-asset-item>
+    <a-asset-item id="Picture_04-obj" src="./models/Picture_04.obj"></a-asset-item>
+    <a-asset-item id="Picture_04-mtl" src="./models/Picture_04.mtl"></a-asset-item>
+    <a-asset-item id="Picture_06-obj" src="./models/Picture_06.obj"></a-asset-item>
+    <a-asset-item id="Picture_06-mtl" src="./models/Picture_06.mtl"></a-asset-item>
+    <a-asset-item id="Trash_02-obj" src="./models/Trash_02.obj"></a-asset-item>
+    <a-asset-item id="Trash_02-mtl" src="./models/Trash_02.mtl"></a-asset-item>
+    <a-asset-item id="Trash_01-obj" src="./models/Trash_01.obj"></a-asset-item>
+    <a-asset-item id="Trash_01-mtl" src="./models/Trash_01.mtl"></a-asset-item>
+    <a-asset-item id="Plate_01-obj" src="./models/Plate_01.obj"></a-asset-item>
+    <a-asset-item id="Plate_01-mtl" src="./models/Plate_01.mtl"></a-asset-item>
+    <a-asset-item id="Donut_01-obj" src="./models/Donut_01.obj"></a-asset-item>
+    <a-asset-item id="Donut_01-mtl" src="./models/Donut_01.mtl"></a-asset-item>
+    <a-asset-item id="CoffeeCup-obj" src="./models/CoffeeCup.obj"></a-asset-item>
+    <a-asset-item id="CoffeeCup-mtl" src="./models/CoffeeCup.mtl"></a-asset-item>
+    <a-asset-item id="Flower_06-obj" src="./models/Flower_06.obj"></a-asset-item>
+    <a-asset-item id="Flower_06-mtl" src="./models/Flower_06.mtl"></a-asset-item>
+    <a-asset-item id="AirCondition-obj" src="./models/AirCondition.obj"></a-asset-item>
+    <a-asset-item id="AirCondition-mtl" src="./models/AirCondition.mtl"></a-asset-item>
+    <a-asset-item id="Bed_Table_01-obj" src="./models/Bed_Table_01.obj"></a-asset-item>
+    <a-asset-item id="Bed_Table_01-mtl" src="./models/Bed_Table_01.mtl"></a-asset-item>
+    <a-asset-item id="Mirror_02-obj" src="./models/Mirror_02.obj"></a-asset-item>
+    <a-asset-item id="Mirror_02-mtl" src="./models/Mirror_02.mtl"></a-asset-item>
+    <a-asset-item id="Mirror_01-obj" src="./models/Mirror_01.obj"></a-asset-item>
+    <a-asset-item id="Mirror_01-mtl" src="./models/Mirror_01.mtl"></a-asset-item>
+    <a-asset-item id="Flower_05-obj" src="./models/Flower_05.obj"></a-asset-item>
+    <a-asset-item id="Flower_05-mtl" src="./models/Flower_05.mtl"></a-asset-item>
+    <a-asset-item id="Fork-obj" src="./models/Fork.obj"></a-asset-item>
+    <a-asset-item id="Fork-mtl" src="./models/Fork.mtl"></a-asset-item>
+    <a-asset-item id="Spoon-obj" src="./models/Spoon.obj"></a-asset-item>
+    <a-asset-item id="Spoon-mtl" src="./models/Spoon.mtl"></a-asset-item>
+    <a-asset-item id="Cup_06-obj" src="./models/Cup_06.obj"></a-asset-item>
+    <a-asset-item id="Cup_06-mtl" src="./models/Cup_06.mtl"></a-asset-item>
+    <a-asset-item id="Cake-obj" src="./models/Cake.obj"></a-asset-item>
+    <a-asset-item id="Cake-mtl" src="./models/Cake.mtl"></a-asset-item>
+    <a-asset-item id="Apple-obj" src="./models/Apple.obj"></a-asset-item>
+    <a-asset-item id="Apple-mtl" src="./models/Apple.mtl"></a-asset-item>
+    <a-asset-item id="Orange-obj" src="./models/Orange.obj"></a-asset-item>
+    <a-asset-item id="Orange-mtl" src="./models/Orange.mtl"></a-asset-item>
+    <a-asset-item id="Pear-obj" src="./models/Pear.obj"></a-asset-item>
+    <a-asset-item id="Pear-mtl" src="./models/Pear.mtl"></a-asset-item>
+    <a-asset-item id="Sandwich-obj" src="./models/Sandwich.obj"></a-asset-item>
+    <a-asset-item id="Sandwich-mtl" src="./models/Sandwich.mtl"></a-asset-item>
+    <a-asset-item id="Cup_04-obj" src="./models/Cup_04.obj"></a-asset-item>
+    <a-asset-item id="Cup_04-mtl" src="./models/Cup_04.mtl"></a-asset-item>
+    <a-asset-item id="Pumpkin-obj" src="./models/Pumpkin.obj"></a-asset-item>
+    <a-asset-item id="Pumpkin-mtl" src="./models/Pumpkin.mtl"></a-asset-item>
+    <a-asset-item id="Egg-obj" src="./models/Egg.obj"></a-asset-item>
+    <a-asset-item id="Egg-mtl" src="./models/Egg.mtl"></a-asset-item>
+    <a-asset-item id="Pan_02-obj" src="./models/Pan_02.obj"></a-asset-item>
+    <a-asset-item id="Pan_02-mtl" src="./models/Pan_02.mtl"></a-asset-item>
+    <a-asset-item id="Pan_01-obj" src="./models/Pan_01.obj"></a-asset-item>
+    <a-asset-item id="Pan_01-mtl" src="./models/Pan_01.mtl"></a-asset-item>
+    <a-asset-item id="Cup_02-obj" src="./models/Cup_02.obj"></a-asset-item>
+    <a-asset-item id="Cup_02-mtl" src="./models/Cup_02.mtl"></a-asset-item>
+    <a-asset-item id="Knife_01-obj" src="./models/Knife_01.obj"></a-asset-item>
+    <a-asset-item id="Knife_01-mtl" src="./models/Knife_01.mtl"></a-asset-item>
+    <a-asset-item id="Plate_04-obj" src="./models/Plate_04.obj"></a-asset-item>
+    <a-asset-item id="Plate_04-mtl" src="./models/Plate_04.mtl"></a-asset-item>
+    <a-asset-item id="Plate_02-obj" src="./models/Plate_02.obj"></a-asset-item>
+    <a-asset-item id="Plate_02-mtl" src="./models/Plate_02.mtl"></a-asset-item>
+    <a-asset-item id="Steak_01-obj" src="./models/Steak_01.obj"></a-asset-item>
+    <a-asset-item id="Steak_01-mtl" src="./models/Steak_01.mtl"></a-asset-item>
+    <a-asset-item id="Knife_02-obj" src="./models/Knife_02.obj"></a-asset-item>
+    <a-asset-item id="Knife_02-mtl" src="./models/Knife_02.mtl"></a-asset-item>
+    <a-asset-item id="KitchenDesk-obj" src="./models/KitchenDesk.obj"></a-asset-item>
+    <a-asset-item id="KitchenDesk-mtl" src="./models/KitchenDesk.mtl"></a-asset-item>
+    <a-asset-item id="Bottle-obj" src="./models/Bottle.obj"></a-asset-item>
+    <a-asset-item id="Bottle-mtl" src="./models/Bottle.mtl"></a-asset-item>
+    <a-asset-item id="Pot_01-obj" src="./models/Pot_01.obj"></a-asset-item>
+    <a-asset-item id="Pot_01-mtl" src="./models/Pot_01.mtl"></a-asset-item>
+    <a-asset-item id="Pot_02-obj" src="./models/Pot_02.obj"></a-asset-item>
+    <a-asset-item id="Pot_02-mtl" src="./models/Pot_02.mtl"></a-asset-item>
+    <a-asset-item id="Magnet_for_knifes-obj" src="./models/Magnet_for_knifes.obj"></a-asset-item>
+    <a-asset-item id="Magnet_for_knifes-mtl" src="./models/Magnet_for_knifes.mtl"></a-asset-item>
+    <a-asset-item id="Knife_03-obj" src="./models/Knife_03.obj"></a-asset-item>
+    <a-asset-item id="Knife_03-mtl" src="./models/Knife_03.mtl"></a-asset-item>
+    <a-asset-item id="Microvawe-obj" src="./models/Microvawe.obj"></a-asset-item>
+    <a-asset-item id="Microvawe-mtl" src="./models/Microvawe.mtl"></a-asset-item>
+    <a-asset-item id="Kettle-obj" src="./models/Kettle.obj"></a-asset-item>
+    <a-asset-item id="Kettle-mtl" src="./models/Kettle.mtl"></a-asset-item>
+    <a-asset-item id="Plate_03-obj" src="./models/Plate_03.obj"></a-asset-item>
+    <a-asset-item id="Plate_03-mtl" src="./models/Plate_03.mtl"></a-asset-item>
+    <a-asset-item id="Catpet_05-obj" src="./models/Catpet_05.obj"></a-asset-item>
+    <a-asset-item id="Catpet_05-mtl" src="./models/Catpet_05.mtl"></a-asset-item>
+    <a-asset-item id="Box-obj" src="./models/Box.obj"></a-asset-item>
+    <a-asset-item id="Box-mtl" src="./models/Box.mtl"></a-asset-item>
+    <a-asset-item id="Book_02-obj" src="./models/Book_02.obj"></a-asset-item>
+    <a-asset-item id="Book_02-mtl" src="./models/Book_02.mtl"></a-asset-item>
+    <a-asset-item id="Book_03-obj" src="./models/Book_03.obj"></a-asset-item>
+    <a-asset-item id="Book_03-mtl" src="./models/Book_03.mtl"></a-asset-item>
+    <a-asset-item id="NoteBook_02-obj" src="./models/NoteBook_02.obj"></a-asset-item>
+    <a-asset-item id="NoteBook_02-mtl" src="./models/NoteBook_02.mtl"></a-asset-item>
+    <a-asset-item id="Candle_03-obj" src="./models/Candle_03.obj"></a-asset-item>
+    <a-asset-item id="Candle_03-mtl" src="./models/Candle_03.mtl"></a-asset-item>
+    <a-asset-item id="Flower_01-obj" src="./models/Flower_01.obj"></a-asset-item>
+    <a-asset-item id="Flower_01-mtl" src="./models/Flower_01.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_06-obj" src="./models/RoomFurniture_06.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_06-mtl" src="./models/RoomFurniture_06.mtl"></a-asset-item>
+    <a-asset-item id="Darts-obj" src="./models/Darts.obj"></a-asset-item>
+    <a-asset-item id="Darts-mtl" src="./models/Darts.mtl"></a-asset-item>
+    <a-asset-item id="Plate_06-obj" src="./models/Plate_06.obj"></a-asset-item>
+    <a-asset-item id="Plate_06-mtl" src="./models/Plate_06.mtl"></a-asset-item>
+    <a-asset-item id="Book_01-obj" src="./models/Book_01.obj"></a-asset-item>
+    <a-asset-item id="Book_01-mtl" src="./models/Book_01.mtl"></a-asset-item>
+    <a-asset-item id="NoteBook_01-obj" src="./models/NoteBook_01.obj"></a-asset-item>
+    <a-asset-item id="NoteBook_01-mtl" src="./models/NoteBook_01.mtl"></a-asset-item>
+    <a-asset-item id="Book_04-obj" src="./models/Book_04.obj"></a-asset-item>
+    <a-asset-item id="Book_04-mtl" src="./models/Book_04.mtl"></a-asset-item>
+    <a-asset-item id="KubikRubik-obj" src="./models/KubikRubik.obj"></a-asset-item>
+    <a-asset-item id="KubikRubik-mtl" src="./models/KubikRubik.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_01-obj" src="./models/RoomFurniture_01.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_01-mtl" src="./models/RoomFurniture_01.mtl"></a-asset-item>
+    <a-asset-item id="Clock_01-obj" src="./models/Clock_01.obj"></a-asset-item>
+    <a-asset-item id="Clock_01-mtl" src="./models/Clock_01.mtl"></a-asset-item>
+    <a-asset-item id="Fireplace_01-obj" src="./models/Fireplace_01.obj"></a-asset-item>
+    <a-asset-item id="Fireplace_01-mtl" src="./models/Fireplace_01.mtl"></a-asset-item>
+    <a-asset-item id="Flower_04-obj" src="./models/Flower_04.obj"></a-asset-item>
+    <a-asset-item id="Flower_04-mtl" src="./models/Flower_04.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_13-obj" src="./models/Curtains_13.obj"></a-asset-item>
+    <a-asset-item id="Curtains_13-mtl" src="./models/Curtains_13.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_11-obj" src="./models/Curtains_11.obj"></a-asset-item>
+    <a-asset-item id="Curtains_11-mtl" src="./models/Curtains_11.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_04-obj" src="./models/RoomFurniture_04.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_04-mtl" src="./models/RoomFurniture_04.mtl"></a-asset-item>
+    <a-asset-item id="Picture_01-obj" src="./models/Picture_01.obj"></a-asset-item>
+    <a-asset-item id="Picture_01-mtl" src="./models/Picture_01.mtl"></a-asset-item>
+    <a-asset-item id="Cupcake-obj" src="./models/Cupcake.obj"></a-asset-item>
+    <a-asset-item id="Cupcake-mtl" src="./models/Cupcake.mtl"></a-asset-item>
+    <a-asset-item id="Pizza_02-obj" src="./models/Pizza_02.obj"></a-asset-item>
+    <a-asset-item id="Pizza_02-mtl" src="./models/Pizza_02.mtl"></a-asset-item>
+    <a-asset-item id="Toaster-obj" src="./models/Toaster.obj"></a-asset-item>
+    <a-asset-item id="Toaster-mtl" src="./models/Toaster.mtl"></a-asset-item>
+    <a-asset-item id="Catpet_01-obj" src="./models/Catpet_01.obj"></a-asset-item>
+    <a-asset-item id="Catpet_01-mtl" src="./models/Catpet_01.mtl"></a-asset-item>
+    <a-asset-item id="Library-obj" src="./models/Library.obj"></a-asset-item>
+    <a-asset-item id="Library-mtl" src="./models/Library.mtl"></a-asset-item>
+    <a-asset-item id="Shower_01-obj" src="./models/Shower_01.obj"></a-asset-item>
+    <a-asset-item id="Shower_01-mtl" src="./models/Shower_01.mtl"></a-asset-item>
+    <a-asset-item id="NoteBook_03-obj" src="./models/NoteBook_03.obj"></a-asset-item>
+    <a-asset-item id="NoteBook_03-mtl" src="./models/NoteBook_03.mtl"></a-asset-item>
+    <a-asset-item id="Slippers-obj" src="./models/Slippers.obj"></a-asset-item>
+    <a-asset-item id="Slippers-mtl" src="./models/Slippers.mtl"></a-asset-item>
+    <a-asset-item id="Radiator_02-obj" src="./models/Radiator_02.obj"></a-asset-item>
+    <a-asset-item id="Radiator_02-mtl" src="./models/Radiator_02.mtl"></a-asset-item>
+    <a-asset-item id="Picture_02-obj" src="./models/Picture_02.obj"></a-asset-item>
+    <a-asset-item id="Picture_02-mtl" src="./models/Picture_02.mtl"></a-asset-item>
+    <a-asset-item id="Picture_08-obj" src="./models/Picture_08.obj"></a-asset-item>
+    <a-asset-item id="Picture_08-mtl" src="./models/Picture_08.mtl"></a-asset-item>
+    <a-asset-item id="Picture_07-obj" src="./models/Picture_07.obj"></a-asset-item>
+    <a-asset-item id="Picture_07-mtl" src="./models/Picture_07.mtl"></a-asset-item>
+    <a-asset-item id="Picture_05-obj" src="./models/Picture_05.obj"></a-asset-item>
+    <a-asset-item id="Picture_05-mtl" src="./models/Picture_05.mtl"></a-asset-item>
+    <a-asset-item id="Flower_02-obj" src="./models/Flower_02.obj"></a-asset-item>
+    <a-asset-item id="Flower_02-mtl" src="./models/Flower_02.mtl"></a-asset-item>
+    <a-asset-item id="Picture_03-obj" src="./models/Picture_03.obj"></a-asset-item>
+    <a-asset-item id="Picture_03-mtl" src="./models/Picture_03.mtl"></a-asset-item>
+    <a-asset-item id="Towel_02-obj" src="./models/Towel_02.obj"></a-asset-item>
+    <a-asset-item id="Towel_02-mtl" src="./models/Towel_02.mtl"></a-asset-item>
+    <a-asset-item id="SoapBottle_02-obj" src="./models/SoapBottle_02.obj"></a-asset-item>
+    <a-asset-item id="SoapBottle_02-mtl" src="./models/SoapBottle_02.mtl"></a-asset-item>
+    <a-asset-item id="Towel_03-obj" src="./models/Towel_03.obj"></a-asset-item>
+    <a-asset-item id="Towel_03-mtl" src="./models/Towel_03.mtl"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_02-obj" src="./models/ShowerCarpet_02.obj"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_02-mtl" src="./models/ShowerCarpet_02.mtl"></a-asset-item>
+    <a-asset-item id="Radiator_01-obj" src="./models/Radiator_01.obj"></a-asset-item>
+    <a-asset-item id="Radiator_01-mtl" src="./models/Radiator_01.mtl"></a-asset-item>
+    <a-asset-item id="ShowerMirror_02-obj" src="./models/ShowerMirror_02.obj"></a-asset-item>
+    <a-asset-item id="ShowerMirror_02-mtl" src="./models/ShowerMirror_02.mtl"></a-asset-item>
+    <a-asset-item id="ShowerTable_02-obj" src="./models/ShowerTable_02.obj"></a-asset-item>
+    <a-asset-item id="ShowerTable_02-mtl" src="./models/ShowerTable_02.mtl"></a-asset-item>
+    <a-asset-item id="Washer_01-obj" src="./models/Washer_01.obj"></a-asset-item>
+    <a-asset-item id="Washer_01-mtl" src="./models/Washer_01.mtl"></a-asset-item>
+    <a-asset-item id="Toilet_02-obj" src="./models/Toilet_02.obj"></a-asset-item>
+    <a-asset-item id="Toilet_02-mtl" src="./models/Toilet_02.mtl"></a-asset-item>
+    <a-asset-item id="ShowerPart_01-obj" src="./models/ShowerPart_01.obj"></a-asset-item>
+    <a-asset-item id="ShowerPart_01-mtl" src="./models/ShowerPart_01.mtl"></a-asset-item>
+    <a-asset-item id="ToiletPaper-obj" src="./models/ToiletPaper.obj"></a-asset-item>
+    <a-asset-item id="ToiletPaper-mtl" src="./models/ToiletPaper.mtl"></a-asset-item>
+    <a-asset-item id="Toilet_01-obj" src="./models/Toilet_01.obj"></a-asset-item>
+    <a-asset-item id="Toilet_01-mtl" src="./models/Toilet_01.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_17-obj" src="./models/WallFloor2_17.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_17-mtl" src="./models/WallFloor2_17.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_04-obj" src="./models/Lamp_04.obj"></a-asset-item>
+    <a-asset-item id="Lamp_04-mtl" src="./models/Lamp_04.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_07-obj" src="./models/Lamp_07.obj"></a-asset-item>
+    <a-asset-item id="Lamp_07-mtl" src="./models/Lamp_07.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_01-obj" src="./models/Lamp_01.obj"></a-asset-item>
+    <a-asset-item id="Lamp_01-mtl" src="./models/Lamp_01.mtl"></a-asset-item>
+    <a-asset-item id="Sofa_05-obj" src="./models/Sofa_05.obj"></a-asset-item>
+    <a-asset-item id="Sofa_05-mtl" src="./models/Sofa_05.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor1_09-obj" src="./models/WallFloor1_09.obj"></a-asset-item>
+    <a-asset-item id="WallFloor1_09-mtl" src="./models/WallFloor1_09.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor1_12-obj" src="./models/WallFloor1_12.obj"></a-asset-item>
+    <a-asset-item id="WallFloor1_12-mtl" src="./models/WallFloor1_12.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor1_10-obj" src="./models/WallFloor1_10.obj"></a-asset-item>
+    <a-asset-item id="WallFloor1_10-mtl" src="./models/WallFloor1_10.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor1_11-obj" src="./models/WallFloor1_11.obj"></a-asset-item>
+    <a-asset-item id="WallFloor1_11-mtl" src="./models/WallFloor1_11.mtl"></a-asset-item>
+    <a-asset-item id="StairsPart_03-obj" src="./models/StairsPart_03.obj"></a-asset-item>
+    <a-asset-item id="StairsPart_03-mtl" src="./models/StairsPart_03.mtl"></a-asset-item>
+    <a-asset-item id="Stairs_03-obj" src="./models/Stairs_03.obj"></a-asset-item>
+    <a-asset-item id="Stairs_03-mtl" src="./models/Stairs_03.mtl"></a-asset-item>
+    <a-asset-item id="Wall_10-obj" src="./models/Wall_10.obj"></a-asset-item>
+    <a-asset-item id="Wall_10-mtl" src="./models/Wall_10.mtl"></a-asset-item>
+    <a-asset-item id="Wall_03-obj" src="./models/Wall_03.obj"></a-asset-item>
+    <a-asset-item id="Wall_03-mtl" src="./models/Wall_03.mtl"></a-asset-item>
+    <a-asset-item id="Door_05-obj" src="./models/Door_05.obj"></a-asset-item>
+    <a-asset-item id="Door_05-mtl" src="./models/Door_05.mtl"></a-asset-item>
+    <a-asset-item id="Corner_07-obj" src="./models/Corner_07.obj"></a-asset-item>
+    <a-asset-item id="Corner_07-mtl" src="./models/Corner_07.mtl"></a-asset-item>
+    <a-asset-item id="Floor_05-obj" src="./models/Floor_05.obj"></a-asset-item>
+    <a-asset-item id="Floor_05-mtl" src="./models/Floor_05.mtl"></a-asset-item>
+    <a-asset-item id="Floor_02-obj" src="./models/Floor_02.obj"></a-asset-item>
+    <a-asset-item id="Floor_02-mtl" src="./models/Floor_02.mtl"></a-asset-item>
+    <a-asset-item id="Floor_01-obj" src="./models/Floor_01.obj"></a-asset-item>
+    <a-asset-item id="Floor_01-mtl" src="./models/Floor_01.mtl"></a-asset-item>
+    <a-asset-item id="Floor_28-obj" src="./models/Floor_28.obj"></a-asset-item>
+    <a-asset-item id="Floor_28-mtl" src="./models/Floor_28.mtl"></a-asset-item>
+    <a-asset-item id="Floor_08-obj" src="./models/Floor_08.obj"></a-asset-item>
+    <a-asset-item id="Floor_08-mtl" src="./models/Floor_08.mtl"></a-asset-item>
+    <a-asset-item id="Floor_15-obj" src="./models/Floor_15.obj"></a-asset-item>
+    <a-asset-item id="Floor_15-mtl" src="./models/Floor_15.mtl"></a-asset-item>
+    <a-asset-item id="Floor_16-obj" src="./models/Floor_16.obj"></a-asset-item>
+    <a-asset-item id="Floor_16-mtl" src="./models/Floor_16.mtl"></a-asset-item>
+    <a-asset-item id="Floor_10-obj" src="./models/Floor_10.obj"></a-asset-item>
+    <a-asset-item id="Floor_10-mtl" src="./models/Floor_10.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_20-obj" src="./models/WallFloor2_20.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_20-mtl" src="./models/WallFloor2_20.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_19-obj" src="./models/WallFloor2_19.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_19-mtl" src="./models/WallFloor2_19.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_21-obj" src="./models/WallFloor2_21.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_21-mtl" src="./models/WallFloor2_21.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_18-obj" src="./models/WallFloor2_18.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_18-mtl" src="./models/WallFloor2_18.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_23-obj" src="./models/WallFloor2_23.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_23-mtl" src="./models/WallFloor2_23.mtl"></a-asset-item>
+    <a-asset-item id="WallFloor2_24-obj" src="./models/WallFloor2_24.obj"></a-asset-item>
+    <a-asset-item id="WallFloor2_24-mtl" src="./models/WallFloor2_24.mtl"></a-asset-item>
+    <a-asset-item id="Floor_07-obj" src="./models/Floor_07.obj"></a-asset-item>
+    <a-asset-item id="Floor_07-mtl" src="./models/Floor_07.mtl"></a-asset-item>
+    <a-asset-item id="Bed1_02-obj" src="./models/Bed1_02.obj"></a-asset-item>
+    <a-asset-item id="Bed1_02-mtl" src="./models/Bed1_02.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_03-obj" src="./models/Lamp_03.obj"></a-asset-item>
+    <a-asset-item id="Lamp_03-mtl" src="./models/Lamp_03.mtl"></a-asset-item>
+    <a-asset-item id="Clock_04-obj" src="./models/Clock_04.obj"></a-asset-item>
+    <a-asset-item id="Clock_04-mtl" src="./models/Clock_04.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_07-obj" src="./models/RoomFurniture_07.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_07-mtl" src="./models/RoomFurniture_07.mtl"></a-asset-item>
+    <a-asset-item id="Catpet_03-obj" src="./models/Catpet_03.obj"></a-asset-item>
+    <a-asset-item id="Catpet_03-mtl" src="./models/Catpet_03.mtl"></a-asset-item>
+    <a-asset-item id="RoomFurniture_08-obj" src="./models/RoomFurniture_08.obj"></a-asset-item>
+    <a-asset-item id="RoomFurniture_08-mtl" src="./models/RoomFurniture_08.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_10-obj" src="./models/Curtains_10.obj"></a-asset-item>
+    <a-asset-item id="Curtains_10-mtl" src="./models/Curtains_10.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_05-obj" src="./models/Curtains_05.obj"></a-asset-item>
+    <a-asset-item id="Curtains_05-mtl" src="./models/Curtains_05.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_14-obj" src="./models/Curtains_14.obj"></a-asset-item>
+    <a-asset-item id="Curtains_14-mtl" src="./models/Curtains_14.mtl"></a-asset-item>
+    <a-asset-item id="Curtains_01-obj" src="./models/Curtains_01.obj"></a-asset-item>
+    <a-asset-item id="Curtains_01-mtl" src="./models/Curtains_01.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_06-obj" src="./models/Lamp_06.obj"></a-asset-item>
+    <a-asset-item id="Lamp_06-mtl" src="./models/Lamp_06.mtl"></a-asset-item>
+    <a-asset-item id="Sofa_07-obj" src="./models/Sofa_07.obj"></a-asset-item>
+    <a-asset-item id="Sofa_07-mtl" src="./models/Sofa_07.mtl"></a-asset-item>
+    <a-asset-item id="PC_Mouse-obj" src="./models/PC_Mouse.obj"></a-asset-item>
+    <a-asset-item id="PC_Mouse-mtl" src="./models/PC_Mouse.mtl"></a-asset-item>
+    <a-asset-item id="PC_Screen-obj" src="./models/PC_Screen.obj"></a-asset-item>
+    <a-asset-item id="PC_Screen-mtl" src="./models/PC_Screen.mtl"></a-asset-item>
+    <a-asset-item id="PC_Keyboard-obj" src="./models/PC_Keyboard.obj"></a-asset-item>
+    <a-asset-item id="PC_Keyboard-mtl" src="./models/PC_Keyboard.mtl"></a-asset-item>
+    <a-asset-item id="PC_Carpet-obj" src="./models/PC_Carpet.obj"></a-asset-item>
+    <a-asset-item id="PC_Carpet-mtl" src="./models/PC_Carpet.mtl"></a-asset-item>
+    <a-asset-item id="PC-obj" src="./models/PC.obj"></a-asset-item>
+    <a-asset-item id="PC-mtl" src="./models/PC.mtl"></a-asset-item>
+    <a-asset-item id="OfficeChair_01-obj" src="./models/OfficeChair_01.obj"></a-asset-item>
+    <a-asset-item id="OfficeChair_01-mtl" src="./models/OfficeChair_01.mtl"></a-asset-item>
+    <a-asset-item id="OfficeTable_01-obj" src="./models/OfficeTable_01.obj"></a-asset-item>
+    <a-asset-item id="OfficeTable_01-mtl" src="./models/OfficeTable_01.mtl"></a-asset-item>
+    <a-asset-item id="Plate_07-obj" src="./models/Plate_07.obj"></a-asset-item>
+    <a-asset-item id="Plate_07-mtl" src="./models/Plate_07.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_05-obj" src="./models/Lamp_05.obj"></a-asset-item>
+    <a-asset-item id="Lamp_05-mtl" src="./models/Lamp_05.mtl"></a-asset-item>
+    <a-asset-item id="Lamp_02-obj" src="./models/Lamp_02.obj"></a-asset-item>
+    <a-asset-item id="Lamp_02-mtl" src="./models/Lamp_02.mtl"></a-asset-item>
+    <a-asset-item id="OfficeChair_02-obj" src="./models/OfficeChair_02.obj"></a-asset-item>
+    <a-asset-item id="OfficeChair_02-mtl" src="./models/OfficeChair_02.mtl"></a-asset-item>
+    <a-asset-item id="PC_Table-obj" src="./models/PC_Table.obj"></a-asset-item>
+    <a-asset-item id="PC_Table-mtl" src="./models/PC_Table.mtl"></a-asset-item>
+    <a-asset-item id="Bed_Table_02-obj" src="./models/Bed_Table_02.obj"></a-asset-item>
+    <a-asset-item id="Bed_Table_02-mtl" src="./models/Bed_Table_02.mtl"></a-asset-item>
+    <a-asset-item id="Bed2_03-obj" src="./models/Bed2_03.obj"></a-asset-item>
+    <a-asset-item id="Bed2_03-mtl" src="./models/Bed2_03.mtl"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_03-obj" src="./models/ShowerCarpet_03.obj"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_03-mtl" src="./models/ShowerCarpet_03.mtl"></a-asset-item>
+    <a-asset-item id="Boat-obj" src="./models/Boat.obj"></a-asset-item>
+    <a-asset-item id="Boat-mtl" src="./models/Boat.mtl"></a-asset-item>
+    <a-asset-item id="ShowerPart_02-obj" src="./models/ShowerPart_02.obj"></a-asset-item>
+    <a-asset-item id="ShowerPart_02-mtl" src="./models/ShowerPart_02.mtl"></a-asset-item>
+    <a-asset-item id="Bath-obj" src="./models/Bath.obj"></a-asset-item>
+    <a-asset-item id="Bath-mtl" src="./models/Bath.mtl"></a-asset-item>
+    <a-asset-item id="Shower_02-obj" src="./models/Shower_02.obj"></a-asset-item>
+    <a-asset-item id="Shower_02-mtl" src="./models/Shower_02.mtl"></a-asset-item>
+    <a-asset-item id="Toothbrush_02-obj" src="./models/Toothbrush_02.obj"></a-asset-item>
+    <a-asset-item id="Toothbrush_02-mtl" src="./models/Toothbrush_02.mtl"></a-asset-item>
+    <a-asset-item id="Toothbrush_01-obj" src="./models/Toothbrush_01.obj"></a-asset-item>
+    <a-asset-item id="Toothbrush_01-mtl" src="./models/Toothbrush_01.mtl"></a-asset-item>
+    <a-asset-item id="GlassToothbrush_02-obj" src="./models/GlassToothbrush_02.obj"></a-asset-item>
+    <a-asset-item id="GlassToothbrush_02-mtl" src="./models/GlassToothbrush_02.mtl"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_04-obj" src="./models/ShowerCarpet_04.obj"></a-asset-item>
+    <a-asset-item id="ShowerCarpet_04-mtl" src="./models/ShowerCarpet_04.mtl"></a-asset-item>
+    <a-asset-item id="SoapBottle_01-obj" src="./models/SoapBottle_01.obj"></a-asset-item>
+    <a-asset-item id="SoapBottle_01-mtl" src="./models/SoapBottle_01.mtl"></a-asset-item>
+    <a-asset-item id="ShowerTable_01-obj" src="./models/ShowerTable_01.obj"></a-asset-item>
+    <a-asset-item id="ShowerTable_01-mtl" src="./models/ShowerTable_01.mtl"></a-asset-item>
+    <a-asset-item id="Rangehood-obj" src="./models/Rangehood.obj"></a-asset-item>
+    <a-asset-item id="Rangehood-mtl" src="./models/Rangehood.mtl"></a-asset-item>
+    <a-asset-item id="Light_04-obj" src="./models/Light_04.obj"></a-asset-item>
+    <a-asset-item id="Light_04-mtl" src="./models/Light_04.mtl"></a-asset-item>
+    <a-asset-item id="Light_01-obj" src="./models/Light_01.obj"></a-asset-item>
+    <a-asset-item id="Light_01-mtl" src="./models/Light_01.mtl"></a-asset-item>
+    <a-asset-item id="Light_05-obj" src="./models/Light_05.obj"></a-asset-item>
+    <a-asset-item id="Light_05-mtl" src="./models/Light_05.mtl"></a-asset-item>
+    <a-asset-item id="Light_03-obj" src="./models/Light_03.obj"></a-asset-item>
+    <a-asset-item id="Light_03-mtl" src="./models/Light_03.mtl"></a-asset-item>
+    <a-asset-item id="Light_02-obj" src="./models/Light_02.obj"></a-asset-item>
+    <a-asset-item id="Light_02-mtl" src="./models/Light_02.mtl"></a-asset-item>
+  </a-assets>
+  <a-sky radius="5000" color="#9FBBE9"></a-sky>
+  <a-light position="0 16.8 0" rotation="-56.37999 -285.8 -9.251951E-06" name="Directional Light" type="directional" color="#FFE7BE"></a-light>
+  <!-- <a-camera position="5.016342 4.131145 2.303604"  cursor-color=#FFFF58 wasd-controls-enabled=true fov=60   cursor-offset=1 cursor-opacity=1 cursor-scale1 look-controls-enabled=true></a-camera> -->
+  <a-entity camera look-controls wasd-controls="acceleration:20" position="5.016342 4.131145 2.303604"></a-entity>
+
+
+  <!-- <a-entity position="41.30866 -28.04836 53.56039" name="Cameras">
+    <a-entity position="-36.9 38.2 -58.1" rotation="-62.39999 -270 -1.47426E-05" name="Camera1" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-36.7 39.9 -58.1" rotation="-58.89999 -270 -9.917348E-06" name="Camera2" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-44.2 29.6 -60.95" rotation="-10 -300.6 -8.669444E-07" name="Camera3" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-43.993 29.817 -61.191" rotation="-15.59999 -65.21484 1.772855E-06" name="Camera4" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-39.821 29.69 -53.849" rotation="-14.1 -279.5 4.401475E-07" name="Camera5" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-46.325 32.1795 -55.864" rotation="-13.79999 -118.1809 -4.395754E-07" name="Camera6" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-46.702 32.311 -60.76" rotation="-21.68999 -73.79998 9.188293E-07" name="Camera7" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+    <a-entity position="-38.01 32.589 -53.367" rotation="-20 -305.517 9.085669E-07" name="Camera8" tag="MainCamera">
+      <a-camera far="1000" near="0.3" look-controls-enabled="true" wasd-controls-enabled="true">
+        <a-cursor fuse="False" max-distance="1000" timeout="1500"></a-cursor>
+      </a-camera>
+    </a-entity>
+  </a-entity> -->
+  <a-entity name="BG">
+    <a-entity position="-1.25 -0.36944 -4.37" scale="0.2340183 1 0.2792866" name="BG" obj-model="obj: #BG-obj; mtl: #BG-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity position="0 -0.1 0" name="Props_01">
+    <a-entity position="-1.741 0.173 -10.143" rotation="0 -85.80342 0" name="BarChair_02" obj-model="obj: #BarChair_02-obj; mtl: #BarChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.14 1.682 -10.495" rotation="0 -180 0" name="RangeHood" obj-model="obj: #RangeHood-obj; mtl: #RangeHood-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.14 0.2121831 -10.365" rotation="0 -180 0" name="Oven" obj-model="obj: #Oven-obj; mtl: #Oven-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.635 0.2121 -10.117" rotation="0 -90.00001 0" name="KitchenCorner_02" obj-model="obj: #KitchenCorner_02-obj; mtl: #KitchenCorner_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.015 0.215 -10.413" rotation="0 -180 0" name="KitchenTabletop2_03" obj-model="obj: #KitchenTabletop2_03-obj; mtl: #KitchenTabletop2_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.873 0.215 -10.384" name="KitchenTabletop2_07" obj-model="obj: #KitchenTabletop2_07-obj; mtl: #KitchenTabletop2_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9 0.215 -8.414" rotation="0 -90.00001 0" name="KitchenTabletop2_01" obj-model="obj: #KitchenTabletop2_01-obj; mtl: #KitchenTabletop2_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9 0.215 -9.525" rotation="0 -90.00001 0" name="KitchenTabletop2_02" obj-model="obj: #KitchenTabletop2_02-obj; mtl: #KitchenTabletop2_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 0.2121831 -9.808" rotation="0 -180 0" name="Bar_02" obj-model="obj: #Bar_02-obj; mtl: #Bar_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.789 0.2121831 -7.456" rotation="0 -90.00001 0" name="Refrigerator" obj-model="obj: #Refrigerator-obj; mtl: #Refrigerator-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.617 0.173 -10.201" rotation="0 -178.882 0" name="BarChair_02 (1)" obj-model="obj: #BarChair_02-obj; mtl: #BarChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.377 0.2121831 -7.502" name="KitchenChair_02" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.417 0.184 -8.375999" rotation="0 -90.00001 0" name="KitchenTable_02" obj-model="obj: #KitchenTable_02-obj; mtl: #KitchenTable_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.972 1.625 -8.646" rotation="0 -90.00001 0" name="KitchenTabletop2_06" obj-model="obj: #KitchenTabletop2_06-obj; mtl: #KitchenTabletop2_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.972 1.625 -8.25" rotation="0 -90.00001 0" name="KitchenTabletop2_04" obj-model="obj: #KitchenTabletop2_04-obj; mtl: #KitchenTabletop2_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.774 1.625 -10.473" rotation="0 -180 0" name="KitchenTabletop2_04 (1)" obj-model="obj: #KitchenTabletop2_04-obj; mtl: #KitchenTabletop2_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.377 0.2121831 -9.304" rotation="0 -180 0" name="KitchenChair_02 (1)" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.911 0.2121831 -8.632" rotation="0 -90.00001 0" name="KitchenChair_02 (2)" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.911 0.2121831 -8.074" rotation="0 -90.00001 0" name="KitchenChair_02 (3)" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.909 0.2121831 -8.632" rotation="0 -270 0" name="KitchenChair_02 (4)" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.909 0.2121831 -8.074" rotation="0 -270 0" name="KitchenChair_02 (5)" obj-model="obj: #KitchenChair_02-obj; mtl: #KitchenChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.683 1.107 -5.829" name="SwitchLight (1)" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="1.811 1.107 -3.317" name="SwitchLight (2)" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.678 1.098 -3.326" name="SwitchLight (3)" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.169 1.233 -8.334" rotation="0 -90.00001 0" name="Socket_02 (1)" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.223 0.223 -4.509" scale="0.5389803 0.53898 0.5389803" rotation="0 -90.00001 0" name="Catpet_04" obj-model="obj: #Catpet_04-obj; mtl: #Catpet_04-mtl" visible = "true"></a-entity>
+    <a-entity position="3.671 1.997 -5.367" rotation="0 -270 0" name="Hook_02" obj-model="obj: #Hook_02-obj; mtl: #Hook_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.187 1.233 -10.169" rotation="0 -90.00001 0" name="Socket_02" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.477 0.2091831 -5.363" rotation="0 -270 0" name="RoomFurniture_03" obj-model="obj: #RoomFurniture_03-obj; mtl: #RoomFurniture_03-mtl" visible = "true"></a-entity>
+    <a-entity position="3.679 1.666 -3.628" rotation="0 -270 0" name="SmartHome" obj-model="obj: #SmartHome-obj; mtl: #SmartHome-mtl" visible = "true"></a-entity>
+    <a-entity position="1.786 1.107 -5.823" name="SwitchLight" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="3.58 1.68 -7.003" rotation="0 -270 0" name="Curtains_15" obj-model="obj: #Curtains_15-obj; mtl: #Curtains_15-mtl" visible = "true"></a-entity>
+    <a-entity position="3.58 1.68 -9.505" rotation="0 -270 0" name="Curtains_15 (1)" obj-model="obj: #Curtains_15-obj; mtl: #Curtains_15-mtl" visible = "true"></a-entity>
+    <a-entity position="3.578 1.695 -1.996" rotation="0 -270 0" name="Curtains_15 (3)" obj-model="obj: #Curtains_15-obj; mtl: #Curtains_15-mtl" visible = "true"></a-entity>
+    <a-entity position="3.586 1.695 0.495" rotation="0 -270 0" name="Curtains_15 (4)" obj-model="obj: #Curtains_15-obj; mtl: #Curtains_15-mtl" visible = "true"></a-entity>
+    <a-entity position="3.441 0.978 -5.34" name="Plate_05" obj-model="obj: #Plate_05-obj; mtl: #Plate_05-mtl" visible = "true"></a-entity>
+    <a-entity position="3.432 0.2121831 -3.554" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.402 0.233 1.428" rotation="0 -13.63868 0" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="3.421 0.2121831 1.415" rotation="0 -307.4016 0" name="Flower_03 (1)" obj-model="obj: #Flower_03-obj; mtl: #Flower_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.994 0.851 -2.714" rotation="-283.8334 -22.93937 2.197132" name="Pillow_03" obj-model="obj: #Pillow_03-obj; mtl: #Pillow_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.973 1.069 1.672" name="Socket_01" obj-model="obj: #Socket_01-obj; mtl: #Socket_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.222 1.931 1.587" rotation="0 -89.63092 0" name="PhotoFrame (2)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.495 1.162 -0.266" name="Candle_01 (1)" obj-model="obj: #Candle_01-obj; mtl: #Candle_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.479 1.168 -1.407" name="Candle_02 (2)" obj-model="obj: #Candle_02-obj; mtl: #Candle_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.666 2.115 -0.803" rotation="0 -90.00001 0" name="Clock_03" obj-model="obj: #Clock_03-obj; mtl: #Clock_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.628931 2.129837 1.563527" name="TV_Shelf" obj-model="obj: #TV_Shelf-obj; mtl: #TV_Shelf-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.763 0.679 -1.604" name="TV_Remote" obj-model="obj: #TV_Remote-obj; mtl: #TV_Remote-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.555 0.979 1.42" name="TV" obj-model="obj: #TV-obj; mtl: #TV-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.546414 0.2121831 1.508716" name="RoomFurniture_05" obj-model="obj: #RoomFurniture_05-obj; mtl: #RoomFurniture_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.513 0.2121831 -1.473" name="RoomTable_01" obj-model="obj: #RoomTable_01-obj; mtl: #RoomTable_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.795 1.797 -10.669" rotation="0 -180 0" name="Picture_04" obj-model="obj: #Picture_04-obj; mtl: #Picture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.276 2.02 -10.669" rotation="0 -180 0" name="Picture_06" obj-model="obj: #Picture_06-obj; mtl: #Picture_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.023 0.644 -6.839" name="Trash_02" obj-model="obj: #Trash_02-obj; mtl: #Trash_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.016999 0.2121831 -6.880001" name="Trash_01" obj-model="obj: #Trash_01-obj; mtl: #Trash_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.3956 1.3424 -10.071" scale="0.88 0.88 0.88" name="Plate_01 (4)" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.40717 1.345487 -10.082" scale="0.8635172 0.8635172 0.8635172" name="Donut_01" obj-model="obj: #Donut_01-obj; mtl: #Donut_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.279 1.338913 -9.902" scale="0.6111771 0.6111771 0.6111771" name="CoffeeCup" obj-model="obj: #CoffeeCup-obj; mtl: #CoffeeCup-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.356 1.338913 -10.55" scale="0.6876757 0.6876757 0.6876757" rotation="0 -341.1211 0" name="Flower_06 (1)" obj-model="obj: #Flower_06-obj; mtl: #Flower_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.129 1.338913 -10.52" rotation="0 -159.1359 0" name="PhotoFrame (1)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="3.679 0.6482618 -7.735" rotation="0 -270 0" name="Socket_02" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.616 2.359 -8.237" scale="0.7049422 0.7797362 0.7049422" rotation="0 -270 0" name="AirCondition" obj-model="obj: #AirCondition-obj; mtl: #AirCondition-mtl" visible = "true"></a-entity>
+    <a-entity position="1.438 0.21 -8.498" scale="1.8234 1.8234 1.8234" rotation="0 -91.75795 0" name="Catpet_04" obj-model="obj: #Catpet_04-obj; mtl: #Catpet_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.296 0.2121831 -3.526" name="Bed_Table_01" obj-model="obj: #Bed_Table_01-obj; mtl: #Bed_Table_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.308 1.641 -3.33" name="Mirror_02" obj-model="obj: #Mirror_02-obj; mtl: #Mirror_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.034 1.183 -5.965" name="Candle_02" obj-model="obj: #Candle_02-obj; mtl: #Candle_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.609 1.873 -5.817" scale="1.01 1.01 1.01" name="Mirror_01" obj-model="obj: #Mirror_01-obj; mtl: #Mirror_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.623 1.183 -5.941868" scale="0.547 0.547 0.547" name="Flower_06" obj-model="obj: #Flower_06-obj; mtl: #Flower_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.686 2.222 -7.424" scale="0.48607 0.48607 0.48607" name="Flower_05" obj-model="obj: #Flower_05-obj; mtl: #Flower_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.8077 1.01 -9.5329" scale="0.36264 0.36264 0.36264" rotation="0 -121.3934 0" name="Fork (2)" obj-model="obj: #Fork-obj; mtl: #Fork-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.8324 0.9496 -9.355" scale="0.68738 0.68738 0.68738" name="Spoon" obj-model="obj: #Spoon-obj; mtl: #Spoon-mtl" visible = "true"></a-entity>
+    <a-entity position="1.6144 1.061 -8.49" scale="0.6461603 0.64616 0.6461603" rotation="0 -87.16447 0" name="Fork (1)" obj-model="obj: #Fork-obj; mtl: #Fork-mtl" visible = "true"></a-entity>
+    <a-entity position="1.583 1.053 -8.861" scale="0.6330703 0.63307 0.6330703" rotation="0 -140.0638 0" name="Cup_06" obj-model="obj: #Cup_06-obj; mtl: #Cup_06-mtl" visible = "true"></a-entity>
+    <a-entity position="1.66 1.06 -8.676" scale="0.60221 0.60221 0.60221" rotation="0 -41.07872 0" name="Cake" obj-model="obj: #Cake-obj; mtl: #Cake-mtl" visible = "true"></a-entity>
+    <a-entity position="1.649 1.056832 -8.666999" scale="0.78 0.78 0.78" name="Plate_01 (3)" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.1612 1.067 -7.867" scale="0.73867 0.73867 0.73867" rotation="0 -270.2779 0" name="Fork" obj-model="obj: #Fork-obj; mtl: #Fork-mtl" visible = "true"></a-entity>
+    <a-entity position="1.4386 1.137 -8.4254" scale="0.43187 0.4318699 0.4318699" rotation="-342.6082 0 0" name="Apple (1)" obj-model="obj: #Apple-obj; mtl: #Apple-mtl" visible = "true"></a-entity>
+    <a-entity position="1.478 1.113 -8.306" scale="0.51035 0.51035 0.51035" rotation="0 0 28.70145" name="Orange (5)" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="1.385 1.091 -8.348" scale="0.692028 0.692028 0.692028" rotation="-40.7347 0 0" name="Pear" obj-model="obj: #Pear-obj; mtl: #Pear-mtl" visible = "true"></a-entity>
+    <a-entity position="1.4569 1.044 -8.3909" scale="0.57805 0.57805 0.57805" name="Apple" obj-model="obj: #Apple-obj; mtl: #Apple-mtl" visible = "true"></a-entity>
+    <a-entity position="1.193 1.061 -8.054" scale="0.7281058 0.7281055 0.7281058" rotation="0 -305.2686 0" name="Sandwich" obj-model="obj: #Sandwich-obj; mtl: #Sandwich-mtl" visible = "true"></a-entity>
+    <a-entity position="1.189853 1.057032 -8.05883" name="Plate_01 (2)" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.333 1.0548 -7.8599" scale="0.71453 0.71453 0.71453" rotation="0 -325.1754 0" name="Cup_04" obj-model="obj: #Cup_04-obj; mtl: #Cup_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.926 2.22 -10.469" scale="0.5390924 0.5390924 0.5390924" name="Pumpkin" obj-model="obj: #Pumpkin-obj; mtl: #Pumpkin-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.300099 1.118042 -10.5019" scale="0.433 0.433 0.433" name="Egg" obj-model="obj: #Egg-obj; mtl: #Egg-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.2971 1.114 -10.485" scale="0.4881797 0.4881797 0.4881797" rotation="0 -124.4847 0" name="Pan_02" obj-model="obj: #Pan_02-obj; mtl: #Pan_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.987 1.114 -10.4832" scale="0.5191015 0.5191015 0.5191015" name="Pan_01" obj-model="obj: #Pan_01-obj; mtl: #Pan_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.976 1.106 -8.905" scale="0.4508 0.4508 0.4508001" rotation="-341.0015 -336.1415 21.16323" name="Orange" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9448 1.091649 -8.870299" scale="0.79398 0.79398 0.79398" name="Plate_05" obj-model="obj: #Plate_05-obj; mtl: #Plate_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.695 1.092 -8.141" scale="0.6830202 0.68302 0.6830202" rotation="0 -121.7542 0" name="Cup_02" obj-model="obj: #Cup_02-obj; mtl: #Cup_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.8616 1.002 -9.462" scale="0.4655205 0.46552 0.4655205" rotation="-351.9985 -147.6533 18.32988" name="Knife_01" obj-model="obj: #Knife_01-obj; mtl: #Knife_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9446 1.1209 -9.6755" rotation="-25.46018 -227.1495 180" name="Plate_04" obj-model="obj: #Plate_04-obj; mtl: #Plate_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9246 0.951 -9.617" scale="0.77394 0.77394 0.77394" rotation="0 0 0.4905867" name="Plate_02" obj-model="obj: #Plate_02-obj; mtl: #Plate_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9446 0.9471 -9.334001" scale="0.49404 0.49404 0.49404" name="Plate_01" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.965 1.1317 -10.293" rotation="0 -225.9982 0" name="Steak_01" obj-model="obj: #Steak_01-obj; mtl: #Steak_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.992 1.26466 -10.233" rotation="-335 -180 90.00001" name="Knife_02" obj-model="obj: #Knife_02-obj; mtl: #Knife_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.027475 1.09766 -10.2911" scale="0.86602 0.86602 0.86602" name="KitchenDesk" obj-model="obj: #KitchenDesk-obj; mtl: #KitchenDesk-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.5428 1.083 -10.6105" scale="0.92158 0.92158 0.92158" name="Bottle" obj-model="obj: #Bottle-obj; mtl: #Bottle-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.944 2.22 -8.288" rotation="0 -316.8105 0" name="Pot_01" obj-model="obj: #Pot_01-obj; mtl: #Pot_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.934657 2.22 -8.050073" rotation="0 -86.65131 0" name="Pot_02" obj-model="obj: #Pot_02-obj; mtl: #Pot_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.158 1.348 -8.74" scale="0.7469903 0.74699 0.7469903" rotation="0 -90.00001 0" name="Magnet_for_knifes" obj-model="obj: #Magnet_for_knifes-obj; mtl: #Magnet_for_knifes-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.994 1.09 -8.571" scale="0.8337506 0.83375 0.8337506" rotation="0 -90.00001 0" name="Knife_03" obj-model="obj: #Knife_03-obj; mtl: #Knife_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.886 1.093 -10.493" rotation="0 -180 0" name="Microvawe" obj-model="obj: #Microvawe-obj; mtl: #Microvawe-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.901 1.088 -8.036" scale="0.8258606 0.82586 0.8258606" rotation="0 -243.4608 0" name="Kettle" obj-model="obj: #Kettle-obj; mtl: #Kettle-mtl" visible = "true"></a-entity>
+    <a-entity position="1.438816 1.049 -8.372811" scale="0.93 0.93 0.93" name="Plate_03" obj-model="obj: #Plate_03-obj; mtl: #Plate_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.193 1.053 -8.054" rotation="0 -90.00001 0" name="Catpet_05" obj-model="obj: #Catpet_05-obj; mtl: #Catpet_05-mtl" visible = "true"></a-entity>
+    <a-entity position="3.523722 0.343 -8.059001" scale="0.7464203 0.74642 0.7464203" rotation="0 -90.00001 0" name="Box" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="3.57147 0.343 -8.4379" scale="0.8145701 0.81457 0.8145701" rotation="0 -270 0" name="Book_02" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.556 0.343 -8.484" scale="0.8201301 0.82013 0.8201301" rotation="0 -270 0" name="Book_03" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.219 1.344 -8.933" rotation="0 -295.4983 0" name="NoteBook_02" obj-model="obj: #NoteBook_02-obj; mtl: #NoteBook_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.341 1.335 -10.39" name="Candle_03" obj-model="obj: #Candle_03-obj; mtl: #Candle_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.22 1.327 -10.393" name="Candle_01" obj-model="obj: #Candle_01-obj; mtl: #Candle_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.02 1.0935 -9.099" name="Flower_01 (1)" obj-model="obj: #Flower_01-obj; mtl: #Flower_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.608283 0.2121831 -6.043594" name="RoomFurniture_06" obj-model="obj: #RoomFurniture_06-obj; mtl: #RoomFurniture_06-mtl" visible = "true"></a-entity>
+    <a-entity position="1.067 1.792 -5.829" name="Darts" obj-model="obj: #Darts-obj; mtl: #Darts-mtl" visible = "true"></a-entity>
+    <a-entity position="3.53 1.307 -8.119" scale="0.68176 0.68176 0.68176" name="Plate_06" obj-model="obj: #Plate_06-obj; mtl: #Plate_06-mtl" visible = "true"></a-entity>
+    <a-entity position="3.561 0.664 -8.065" scale="0.7797304 0.7797298 0.7797303" rotation="-359.5056 -271.9709 6.678006" name="Book_01" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.544 0.993 -8.081" scale="0.8376411 0.83764 0.8376411" rotation="0 -188.7793 0" name="NoteBook_01" obj-model="obj: #NoteBook_01-obj; mtl: #NoteBook_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.55 0.667 -7.989" rotation="-0.4780019 -272.112 2.668136E-08" name="Book_04" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="3.481 0.992 -8.462001" rotation="0 -24.88868 0" name="KubikRubik" obj-model="obj: #KubikRubik-obj; mtl: #KubikRubik-mtl" visible = "true"></a-entity>
+    <a-entity position="3.5282 1.3083 -8.380001" rotation="0 -253.904 0" name="PhotoFrame" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="3.551 0.2121831 -8.237469" rotation="0 -270 0" name="RoomFurniture_01" obj-model="obj: #RoomFurniture_01-obj; mtl: #RoomFurniture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.252 2.103 -10.669" rotation="0 -180 0" name="Clock_01" obj-model="obj: #Clock_01-obj; mtl: #Clock_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.537 0.2121831 -0.8069999" rotation="0 -90.00001 0" name="Fireplace_01" obj-model="obj: #Fireplace_01-obj; mtl: #Fireplace_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.386 0.205 -10.313" rotation="0 -37.74452 0" name="Flower_03" obj-model="obj: #Flower_03-obj; mtl: #Flower_03-mtl" visible = "true"></a-entity>
+    <a-entity position="3.518 0.193 -5.99" name="Flower_04" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.097 2.03 -9.506" rotation="0 -90.00001 0" name="Curtains_13" obj-model="obj: #Curtains_13-obj; mtl: #Curtains_13-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.107 1.953 -0.732" rotation="0 -90.00001 0" name="Curtains_11" obj-model="obj: #Curtains_11-obj; mtl: #Curtains_11-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.996 2.03 -10.596" rotation="0 -180 0" name="Curtains_13 (1)" obj-model="obj: #Curtains_13-obj; mtl: #Curtains_13-mtl" visible = "true"></a-entity>
+    <a-entity position="3.556 0.343 -8.393001" scale="0.8201305 0.82013 0.8201306" rotation="0 -270 0" name="Book_03 (1)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.193 1.053 -8.67" rotation="0 -90.00001 0" name="Catpet_05 (1)" obj-model="obj: #Catpet_05-obj; mtl: #Catpet_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.665 1.053 -8.054" rotation="0 -90.00001 0" name="Catpet_05 (2)" obj-model="obj: #Catpet_05-obj; mtl: #Catpet_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.665 1.053 -8.67" rotation="0 -90.00001 0" name="Catpet_05 (3)" obj-model="obj: #Catpet_05-obj; mtl: #Catpet_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.931657 2.22 -8.495" scale="0.8061508 0.80615 0.8061508" rotation="0 -262.4762 0" name="Pot_02 (1)" obj-model="obj: #Pot_02-obj; mtl: #Pot_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9491 0.9599999 -9.4531" scale="0.49404 0.4940402 0.4940401" rotation="-11.10632 -358.6083 352.812" name="Plate_01 (1)" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9404 1.1027 -8.821" scale="0.4507999 0.4508001 0.4508001" rotation="-17.03587 -1.023322 3.48897" name="Orange (1)" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.876 1.1302 -8.887199" scale="0.4508 0.4508 0.4508001" rotation="-330.0374 -35.27725 358.9549" name="Orange (2)" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9404 1.1339 -8.9189" scale="0.4508004 0.4508001 0.4508003" rotation="-329.2001 -205.5418 24.65567" name="Orange (3)" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.9975 1.1315 -8.8354" scale="0.4508001 0.4508 0.4508001" rotation="-13.33249 -34.54065 359.0695" name="Orange (4)" obj-model="obj: #Orange-obj; mtl: #Orange-mtl" visible = "true"></a-entity>
+    <a-entity position="1.5064 1.129 -8.3674" scale="0.6169982 0.6169984 0.6169983" rotation="-5.008087 -44.97434 7.597123" name="Pear (1)" obj-model="obj: #Pear-obj; mtl: #Pear-mtl" visible = "true"></a-entity>
+    <a-entity position="1.3959 1.141 -8.3329" scale="0.43187 0.4318699 0.4318699" rotation="-342.6082 0 0" name="Apple (2)" obj-model="obj: #Apple-obj; mtl: #Apple-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.196 1.183 -5.965" name="Candle_02 (1)" obj-model="obj: #Candle_02-obj; mtl: #Candle_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.235 1.499 -10.669" rotation="8.14222E-13 -180 90.00001" name="Picture_06 (1)" obj-model="obj: #Picture_06-obj; mtl: #Picture_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.444 1.167 -1.09" scale="1.5233 1 1" rotation="0 -93.67308 0" name="PhotoFrame (3)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.458 1.164 -0.67" scale="1.553035 1.2 1.2" rotation="0 -87.08154 0" name="PhotoFrame (4)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.084 0.87 -2.717" rotation="-281.4867 -331.7718 0.4497891" name="Pillow_03 (1)" obj-model="obj: #Pillow_03-obj; mtl: #Pillow_03-mtl" visible = "true"></a-entity>
+    <a-entity position="3.4917 1.1913 -0.7370001" scale="0.68176 0.68176 0.68176" name="Plate_06 (1)" obj-model="obj: #Plate_06-obj; mtl: #Plate_06-mtl" visible = "true"></a-entity>
+    <a-entity position="3.475 1.1917 -0.387" scale="0.8376409 0.83764 0.8376409" rotation="0 -231.9281 0" name="NoteBook_01 (1)" obj-model="obj: #NoteBook_01-obj; mtl: #NoteBook_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.4667 1.19 -0.9960001" rotation="0 -24.88868 0" name="KubikRubik (1)" obj-model="obj: #KubikRubik-obj; mtl: #KubikRubik-mtl" visible = "true"></a-entity>
+    <a-entity position="3.4747 1.19 -1.201" rotation="0 -253.904 0" name="PhotoFrame (5)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.08 1.669 -4.503" rotation="0 -90.00001 0" name="Curtains_15 (2)" obj-model="obj: #Curtains_15-obj; mtl: #Curtains_15-mtl" visible = "true"></a-entity>
+    <a-entity position="1.116 0.902 1.559" name="Book_04" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.410575 0.557 1.51919" scale="1 0.94298 1" name="Book_03" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.245 0.557 1.509562" name="Book_02" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.131426 0.557 1.50527" name="Book_01" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.02 0.56 1.478088" name="Box (1)" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="1.277 0.247 1.484783" name="Box" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.899 0.2121831 -3.57" name="Flower_04" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.929 0.2121831 -5.352" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.531 2.142 1.467" name="Candle_03" obj-model="obj: #Candle_03-obj; mtl: #Candle_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.5464906 2.144 1.462428" name="Candle_01" obj-model="obj: #Candle_01-obj; mtl: #Candle_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.658491 2.143 1.442108" name="Candle_02" obj-model="obj: #Candle_02-obj; mtl: #Candle_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.4507 0.2121831 -0.740142" rotation="0 -270 0" name="RoomFurniture_06" obj-model="obj: #RoomFurniture_06-obj; mtl: #RoomFurniture_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.262 0.756 -2.87" rotation="0 -196.5499 0" name="NoteBook_02" obj-model="obj: #NoteBook_02-obj; mtl: #NoteBook_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.2583039 0.2121831 -2.909707" rotation="0 -180 0" name="RoomFurniture_04" obj-model="obj: #RoomFurniture_04-obj; mtl: #RoomFurniture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.23 1.857 -3.169" rotation="0 -180 0" name="Picture_01" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.2094 0.6898754 -1.519" scale="0.63325 0.63325 0.63325" name="Cupcake" obj-model="obj: #Cupcake-obj; mtl: #Cupcake-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.3074 0.69 -1.5363" scale="0.7215427 0.7215426 0.7215427" rotation="0 -30.03062 0" name="Pizza_02" obj-model="obj: #Pizza_02-obj; mtl: #Pizza_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.279721 0.6791007 -1.523098" name="Plate_01" obj-model="obj: #Plate_01-obj; mtl: #Plate_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.524 1.09 -10.519" rotation="0 -180 0" name="Toaster" obj-model="obj: #Toaster-obj; mtl: #Toaster-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.549 0.667 -1.387" scale="0.6914899 0.69149 0.6914899" rotation="0 -28.5591 0" name="Cup_06" obj-model="obj: #Cup_06-obj; mtl: #Cup_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.517 0.2121831 -1.487" rotation="0 -359.7885 0" name="Catpet_01" obj-model="obj: #Catpet_01-obj; mtl: #Catpet_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.621993 0.203 1.506" name="Library" obj-model="obj: #Library-obj; mtl: #Library-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.545 1.875 -3.161768" scale="1.070001 1.070001 1.070001" rotation="0 -180 90.00001" name="Picture_01 (1)" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.8770001 1.857 -3.169" rotation="0 -180 0" name="Picture_01 (2)" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.187 0.557 1.50527" scale="0.91172 0.91172 0.91172" name="Book_01 (1)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.301 0.557 1.50527" name="Book_01 (2)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.353575 0.557 1.50527" scale="0.91172 1.081391 0.91172" name="Book_01 (3)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.103 0.26 1.50527" rotation="0 0 90.12512" name="Book_01 (4)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.090574 0.3105229 1.532" scale="0.91172 0.91172 0.91172" rotation="0 0 90.12512" name="Book_01 (5)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.497 2.267 1.524" rotation="0 -6.619754 0" name="Box (2)" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="2.119 1.585 1.536" scale="1 0.94298 1" name="Book_03 (2)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="2.036 1.585 1.536" scale="0.83009 0.7827583 0.83009" rotation="0 0 349.2061" name="Book_03 (3)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.977 1.585 1.536" scale="0.9248033 0.8720709 0.9248033" rotation="-359.2642 -359.4747 346.584" name="Book_03 (4)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.96 1.272 1.682" scale="0.7753136 0.7753136 0.7753136" rotation="-359.875 -92.64201 89.99424" name="Book_01 (6)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.963 1.312 1.676" scale="0.7068688 0.7068689 0.7068689" rotation="-359.875 -92.64201 89.99424" name="Book_01 (7)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.865 0.925 1.539" rotation="1.067217E-06 -174.5327 90" name="Book_04 (1)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.208 1.582 1.536" scale="0.8300899 0.7827582 0.8300899" rotation="-359.264 -180 346.584" name="Book_03 (5)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.119 1.585 1.536" scale="0.9248033 0.8720709 0.9248033" rotation="-359.264 -180 0" name="Book_03 (6)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.5882 1.6055 1.601" scale="0.7216278 0.7216279 0.7216279" rotation="6.830189E-06 -92.79453 90" name="Book_04 (2)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.5492 1.6417 1.588" scale="0.7068688 0.7068688 0.7068688" rotation="-359.8833 -111.1584 89.95483" name="Book_01 (8)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.127 1.933 1.51919" scale="1 0.94298 1" name="Book_03 (7)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.950575 1.933 1.509562" name="Book_02 (1)" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.845575 1.933 1.50527" name="Book_01 (9)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.898575 1.933 1.50527" scale="0.91172 0.91172 0.91172" name="Book_01 (10)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.011 1.933 1.50527" name="Book_01 (11)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.071 1.933 1.50527" scale="0.91172 1.081391 0.91172" name="Book_01 (12)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.281425 0.902 1.51919" scale="1 0.94298 1" name="Book_03 (8)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.17 0.902 1.523" rotation="0 -180 0" name="Book_01 (13)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.227 0.902 1.50527" scale="0.91172 1.081391 0.91172" name="Book_01 (14)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.331851 0.902 1.53" name="Book_04 (3)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.42885 0.902 1.53" scale="0.68999 1.0767 1" rotation="0 0 11.51143" name="Book_04 (4)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.284 1.243 1.509562" name="Book_02 (2)" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.178 1.243 1.50527" name="Book_01 (15)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.23 1.243 1.50527" scale="0.91172 0.91172 0.91172" name="Book_01 (16)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.117574 1.243 1.509562" name="Book_02 (3)" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.64 0.922 1.606" scale="0.7216278 0.7216279 0.7216279" rotation="6.830189E-06 -92.79453 90" name="Book_04 (5)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.601 0.965 1.575" scale="0.7068688 0.7068688 0.7068688" rotation="-359.8833 -111.1584 89.95483" name="Book_01 (17)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.31 0.206 1.077" rotation="0 -180 0" name="Shower_01" obj-model="obj: #Shower_01-obj; mtl: #Shower_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.805 1.588 1.507" scale="0.78 0.78 0.78" name="NoteBook_02" obj-model="obj: #NoteBook_02-obj; mtl: #NoteBook_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.252 1.935 1.514" scale="0.7678 0.7678 0.7678" name="NoteBook_03" obj-model="obj: #NoteBook_03-obj; mtl: #NoteBook_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.588 1.254 1.504" scale="0.8393309 0.8393308 0.8393309" rotation="0 -357.3808 0" name="NoteBook_01" obj-model="obj: #NoteBook_01-obj; mtl: #NoteBook_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.299001 0.2350454 0.9309996" rotation="0 -100.434 0" name="Slippers (1)" obj-model="obj: #Slippers-obj; mtl: #Slippers-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.09 1.844 -2.662" rotation="0 -90.00001 0" name="Radiator_02 (1)" obj-model="obj: #Radiator_02-obj; mtl: #Radiator_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.778 1.559 -5.677027" scale="0.5588003 0.5588003 0.5588006" rotation="8.14222E-13 -180 90.00001" name="Picture_02 (1)" obj-model="obj: #Picture_02-obj; mtl: #Picture_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.42 0.214 -5.207" scale="0.7638606 0.76386 0.7638606" rotation="0 -90.00001 0" name="Box (1)" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.325 1.802 -3.324" name="Picture_04" obj-model="obj: #Picture_04-obj; mtl: #Picture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.7318974 1.536964 -3.324" name="Picture_08 (1)" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.037 1.993 -3.324" name="Picture_07 (1)" obj-model="obj: #Picture_07-obj; mtl: #Picture_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.411 2.047 -3.324" name="Picture_05 (1)" obj-model="obj: #Picture_05-obj; mtl: #Picture_05-mtl" visible = "true"></a-entity>
+    <a-entity position="3.569 0.623 -5.249" rotation="0 0 90.00001" name="Book_02" obj-model="obj: #Book_02-obj; mtl: #Book_02-mtl" visible = "true"></a-entity>
+    <a-entity position="3.441 0.219 -5.503" name="Box" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="1.299817 0.621 -3.499" scale="0.28712 0.28712 0.28712" name="Flower_02" obj-model="obj: #Flower_02-obj; mtl: #Flower_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.757 0.2121831 -6.132" name="Flower_03" obj-model="obj: #Flower_03-obj; mtl: #Flower_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.849 1.785 -5.821973" name="Picture_08" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.333745 1.506024 -5.822" name="Picture_07" obj-model="obj: #Picture_07-obj; mtl: #Picture_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.178 1.965 -5.822" name="Picture_05" obj-model="obj: #Picture_05-obj; mtl: #Picture_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.238 1.796 -5.677" rotation="0 -180 0" name="Picture_03" obj-model="obj: #Picture_03-obj; mtl: #Picture_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.699 2.047 -5.677027" scale="0.5588 0.5588 0.5588" rotation="0 -180 0" name="Picture_02" obj-model="obj: #Picture_02-obj; mtl: #Picture_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.798 0.2121831 -5.401" name="Flower_04" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.032 1.881 -2.677" rotation="0 -90.00001 0" name="Towel_02 (1)" obj-model="obj: #Towel_02-obj; mtl: #Towel_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.03 0.2121828 -2.96" name="Trash_01" obj-model="obj: #Trash_01-obj; mtl: #Trash_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.972 1.078 -1.376" rotation="0 -269.4292 0" name="SoapBottle_02" obj-model="obj: #SoapBottle_02-obj; mtl: #SoapBottle_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.567 1.7693 1.5362" scale="1 0.82184 1" name="Towel_03" obj-model="obj: #Towel_03-obj; mtl: #Towel_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.549994 2.029 1.518" name="Towel_02" obj-model="obj: #Towel_02-obj; mtl: #Towel_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.335 0.2350454 1.273" rotation="0 -100.434 0" name="Slippers" obj-model="obj: #Slippers-obj; mtl: #Slippers-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.333 0.2121829 1.087" scale="0.82162 0.82162 0.82162" name="ShowerCarpet_02" obj-model="obj: #ShowerCarpet_02-obj; mtl: #ShowerCarpet_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.558 1.414 1.621231" name="Radiator_01" obj-model="obj: #Radiator_01-obj; mtl: #Radiator_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.853 1.339 -1.793" rotation="0 -270 0" name="ShowerMirror_02" obj-model="obj: #ShowerMirror_02-obj; mtl: #ShowerMirror_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.095 0.2121829 -1.803" rotation="0 -270 0" name="ShowerTable_02" obj-model="obj: #ShowerTable_02-obj; mtl: #ShowerTable_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.934 0.2121829 -2.66" rotation="0 -90.00001 0" name="Washer_01" obj-model="obj: #Washer_01-obj; mtl: #Washer_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.173 0.2121829 0.246" name="Toilet_02" obj-model="obj: #Toilet_02-obj; mtl: #Toilet_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.272 1.259 0.471" rotation="0 -180 0" name="ShowerPart_01" obj-model="obj: #ShowerPart_01-obj; mtl: #ShowerPart_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.653 1.026 0.338" name="ToiletPaper" obj-model="obj: #ToiletPaper-obj; mtl: #ToiletPaper-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.251 0.2121829 -0.104" rotation="0 -270 0" name="Toilet_01" obj-model="obj: #Toilet_01-obj; mtl: #Toilet_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.258 0.1 0.404" scale="0.441915 1 1" rotation="0 -180 0" name="WallFloor2_17" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.828 1.773 -1.005" rotation="0 -270 0" name="Lamp_04" obj-model="obj: #Lamp_04-obj; mtl: #Lamp_04-mtl" visible = "true"></a-entity>
+    <a-entity position="3.672 1.883 -0.733" rotation="0 -270 0" name="Picture_05" obj-model="obj: #Picture_05-obj; mtl: #Picture_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.814 1.048 -3.174" rotation="0 -180 0" name="SwitchLight" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="1.529 1.936 -3.176" rotation="0 -180 0" name="Lamp_07 (1)" obj-model="obj: #Lamp_07-obj; mtl: #Lamp_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.44 0.2121831 -2.991" name="Lamp_01" obj-model="obj: #Lamp_01-obj; mtl: #Lamp_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.537 0.2121831 -3.09" rotation="0 -180 0" name="Sofa_05" obj-model="obj: #Sofa_05-obj; mtl: #Sofa_05-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Walls_01">
+    <a-entity position="0 0 1.75" name="WallFloor1_09 (1)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 -4.5" rotation="0 -90.00001 0" name="WallFloor1_12" obj-model="obj: #WallFloor1_12-obj; mtl: #WallFloor1_12-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 1.75" name="WallFloor1_09" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 1.75" name="WallFloor1_09 (8)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 1.125" scale="0.5000003 1 1" rotation="0 -90.00001 0" name="WallFloor1_09 (9)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -2.625" scale="0.5000003 1 1" rotation="0 -90.00001 0" name="WallFloor1_09 (10)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -0.75" rotation="0 -90.00001 0" name="WallFloor1_10 (1)" obj-model="obj: #WallFloor1_10-obj; mtl: #WallFloor1_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 1.75" name="WallFloor1_09 (11)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -5.75" name="WallFloor1_09 (12)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -10.75" name="WallFloor1_09 (13)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -10.75" name="WallFloor1_09 (14)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 -7" rotation="0 -90.00001 0" name="WallFloor1_11" obj-model="obj: #WallFloor1_11-obj; mtl: #WallFloor1_11-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 -9.5" rotation="0 -90.00001 0" name="WallFloor1_11 (1)" obj-model="obj: #WallFloor1_11-obj; mtl: #WallFloor1_11-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -5.75" name="WallFloor1_12" obj-model="obj: #WallFloor1_12-obj; mtl: #WallFloor1_12-mtl" visible = "true"></a-entity>
+    <a-entity position="0.558 0.11 -4.624" rotation="0 -180 0" name="StairsPart_03" obj-model="obj: #StairsPart_03-obj; mtl: #StairsPart_03-mtl" visible = "true"></a-entity>
+    <a-entity position="0.647 0.11 -5.178" rotation="0 -180 0" name="Stairs_03" obj-model="obj: #Stairs_03-obj; mtl: #Stairs_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -5.75" name="WallFloor1_09 (23)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -3.25" name="WallFloor1_12 (1)" obj-model="obj: #WallFloor1_12-obj; mtl: #WallFloor1_12-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 0 -3.25" scale="2 1 1" name="WallFloor1_09 (6)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.75 0 -0.75" scale="2.01673 1 1" rotation="0 -90.00001 0" name="WallFloor1_09 (7)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -5.75" name="WallFloor1_12 (2)" obj-model="obj: #WallFloor1_12-obj; mtl: #WallFloor1_12-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -3.25" name="WallFloor1_12 (3)" obj-model="obj: #WallFloor1_12-obj; mtl: #WallFloor1_12-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 0.5" rotation="0 -90.00001 0" name="WallFloor1_11 (4)" obj-model="obj: #WallFloor1_11-obj; mtl: #WallFloor1_11-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 -2" rotation="0 -90.00001 0" name="WallFloor1_11 (5)" obj-model="obj: #WallFloor1_11-obj; mtl: #WallFloor1_11-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -9.5" rotation="0 -90.00001 0" name="Wall_10" obj-model="obj: #Wall_10-obj; mtl: #Wall_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -7" rotation="0 -90.00001 0" name="Wall_03" obj-model="obj: #Wall_03-obj; mtl: #Wall_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -10.75" rotation="0 -180 0" name="Wall_10 (1)" obj-model="obj: #Wall_10-obj; mtl: #Wall_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -10.75" rotation="0 -180 0" name="Wall_03 (1)" obj-model="obj: #Wall_03-obj; mtl: #Wall_03-mtl" visible = "true"></a-entity>
+    <a-entity position="2.93 0.125 -5.75" rotation="0 -180 0" name="Door_05" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0.125 -4.93" rotation="0 -90.00001 0" name="Door_05 (1)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="2.93 0.125 -3.253" rotation="0 -180 0" name="Door_05 (2)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.57 0.125 -3.25" rotation="0 -180 0" name="Door_05 (3)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.57 0.125 -5.75" rotation="0 -180 0" name="Door_05 (4)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -4.5" rotation="0 -90.00001 0" name="WallFloor1_11" obj-model="obj: #WallFloor1_11-obj; mtl: #WallFloor1_11-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 1.75" rotation="0 -90.00001 0" name="Corner_07" obj-model="obj: #Corner_07-obj; mtl: #Corner_07-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 0 -10.75" name="Corner_07 (1)" obj-model="obj: #Corner_07-obj; mtl: #Corner_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 1.75" rotation="0 -180 0" name="Corner_07 (2)" obj-model="obj: #Corner_07-obj; mtl: #Corner_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 0 -10.75" rotation="0 -270 0" name="Corner_07 (3)" obj-model="obj: #Corner_07-obj; mtl: #Corner_07-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Floor_01">
+    <a-entity position="-5 0 -2" name="Floor_05 (3)" obj-model="obj: #Floor_05-obj; mtl: #Floor_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 0.5" name="Floor_05 (2)" obj-model="obj: #Floor_05-obj; mtl: #Floor_05-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -7" rotation="0 -90.00001 0" name="Floor_02 (2)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -7" rotation="0 -90.00001 0" name="Floor_01 (2)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -9.5" rotation="0 -90.00001 0" name="Floor_02 (3)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -9.5" rotation="0 -90.00001 0" name="Floor_01 (3)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -7" rotation="0 -90.00001 0" name="Floor_02 (4)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -7" rotation="0 -90.00001 0" name="Floor_01 (4)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -4.5" rotation="0 -90.00001 0" name="Floor_02 (5)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -4.5" rotation="0 -90.00001 0" name="Floor_01 (5)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -2" rotation="0 -90.00001 0" name="Floor_02 (6)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -2" rotation="0 -90.00001 0" name="Floor_01 (6)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 0 -4.5" rotation="0 -90.00001 0" name="Floor_02 (7)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -4.5" rotation="0 -90.00001 0" name="Floor_01 (7)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 -2" rotation="0 -90.00001 0" name="Floor_01 (8)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 0.5" rotation="0 -90.00001 0" name="Floor_02 (8)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 0.5" rotation="0 -90.00001 0" name="Floor_01 (9)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 0 0.5" rotation="0 -90.00001 0" name="Floor_01 (10)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0 0 -9.5" rotation="0 -90.00001 0" name="Floor_02 (1)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 0 -9.5" rotation="0 -90.00001 0" name="Floor_01 (1)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Floor_02">
+    <a-entity position="0 2.5 -7" rotation="0 -90.00001 0" name="Floor_02 (9)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -7" rotation="0 -90.00001 0" name="Floor_01 (11)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -9.5" rotation="0 -90.00001 0" name="Floor_02 (10)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -9.5" rotation="0 -90.00001 0" name="Floor_01 (12)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -7" rotation="0 -90.00001 0" name="Floor_02 (11)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -7" rotation="0 -90.00001 0" name="Floor_01 (13)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.5 -9.5" rotation="0 -90.00001 0" name="Floor_02 (14)" obj-model="obj: #Floor_02-obj; mtl: #Floor_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -9.5" rotation="0 -90.00001 0" name="Floor_01 (16)" obj-model="obj: #Floor_01-obj; mtl: #Floor_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0.625 2.5 -2" name="Floor_28 (1)" obj-model="obj: #Floor_28-obj; mtl: #Floor_28-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -2" name="Floor_08 (1)" obj-model="obj: #Floor_08-obj; mtl: #Floor_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 2.5 -3.875" rotation="0 -90.00001 0" name="Floor_15" obj-model="obj: #Floor_15-obj; mtl: #Floor_15-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.125 2.5 -5.125" rotation="0 -90.00001 0" name="Floor_16" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -4.5" rotation="0 -90.00001 0" name="Floor_10" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -4.5" rotation="0 -90.00001 0" name="Floor_10 (1)" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.125 2.5 -3.875" rotation="0 -90.00001 0" name="Floor_16 (1)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="0.625 2.5 -3.875" rotation="0 -90.00001 0" name="Floor_16 (2)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -2" rotation="0 -90.00001 0" name="Floor_10 (2)" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 0.5" rotation="0 -90.00001 0" name="Floor_10 (3)" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -2" rotation="0 -90.00001 0" name="Floor_10 (4)" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 0.5" rotation="0 -90.00001 0" name="Floor_10 (5)" obj-model="obj: #Floor_10-obj; mtl: #Floor_10-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.625 2.5 1.125" rotation="0 -90.00001 0" name="Floor_16 (3)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.625 2.5 -0.125" rotation="0 -90.00001 0" name="Floor_16 (4)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.625 2.5 -1.375" rotation="0 -90.00001 0" name="Floor_16 (5)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.625 2.5 -2.625" rotation="0 -90.00001 0" name="Floor_16 (6)" obj-model="obj: #Floor_16-obj; mtl: #Floor_16-mtl" visible = "true"></a-entity>
+    <a-entity position="0.625 2.5 0.5" name="Floor_28" obj-model="obj: #Floor_28-obj; mtl: #Floor_28-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 0.5" name="Floor_08" obj-model="obj: #Floor_08-obj; mtl: #Floor_08-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Walls_02">
+    <a-entity position="-2.5 2.5 1.75" name="WallFloor2_17 (2)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.5 1.75" name="WallFloor2_17 (3)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 1.75" name="WallFloor2_17 (4)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -5.75" name="WallFloor2_20" obj-model="obj: #WallFloor2_20-obj; mtl: #WallFloor2_20-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 2.5 -4.5" rotation="0 -90.00001 0" name="WallFloor2_19" obj-model="obj: #WallFloor2_19-obj; mtl: #WallFloor2_19-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 1.75" name="WallFloor2_17 (1)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 2.5 -0.75" rotation="0 -90.00001 0" name="WallFloor2_21" obj-model="obj: #WallFloor2_21-obj; mtl: #WallFloor2_21-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 2.51 -9.5" rotation="0 -90.00001 0" name="WallFloor1_09 (18)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 2.51 -7" rotation="0 -90.00001 0" name="WallFloor1_09 (21)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.51 0.5" rotation="0 -90.00001 0" name="WallFloor1_09 (24)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.51 -2" rotation="0 -90.00001 0" name="WallFloor1_09 (25)" obj-model="obj: #WallFloor1_09-obj; mtl: #WallFloor1_09-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 2.5 -4.5" rotation="0 -270 0" name="WallFloor2_19 (1)" obj-model="obj: #WallFloor2_19-obj; mtl: #WallFloor2_19-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -3.25" rotation="0 -180 0" name="WallFloor2_20 (1)" obj-model="obj: #WallFloor2_20-obj; mtl: #WallFloor2_20-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -3.25" rotation="0 -180 0" name="WallFloor2_20 (2)" obj-model="obj: #WallFloor2_20-obj; mtl: #WallFloor2_20-mtl" visible = "true"></a-entity>
+    <a-entity position="2.5 2.5 -10.75" rotation="0 -180 0" name="WallFloor2_17 (5)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.5 -10.75" rotation="0 -180 0" name="WallFloor2_17 (6)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -10.75" rotation="0 -180 0" name="WallFloor2_17 (7)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -10.75" rotation="0 -180 0" name="WallFloor2_17 (8)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 2.5 -2" rotation="0 -270 0" name="WallFloor2_18 (1)" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 2.5 -7" rotation="0 -270 0" name="WallFloor2_18 (2)" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="-5 2.5 -5.75" rotation="0 -180 0" name="WallFloor2_20 (3)" obj-model="obj: #WallFloor2_20-obj; mtl: #WallFloor2_20-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 2.5 -9.5" rotation="0 -270 0" name="WallFloor2_18 (3)" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 2.5 -9.5" rotation="0 -90.00001 0" name="WallFloor2_18 (4)" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.25 2.5 -7" rotation="0 -90.00001 0" name="WallFloor2_18 (5)" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -3.25" rotation="0 -180 0" name="WallFloor2_17 (1)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.5 -5.75" name="WallFloor2_17 (2)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.5 2.5 -5.75" rotation="0 -180 0" name="WallFloor2_23" obj-model="obj: #WallFloor2_23-obj; mtl: #WallFloor2_23-mtl" visible = "true"></a-entity>
+    <a-entity position="0 2.5 -3.25" rotation="0 -180 0" name="WallFloor2_17" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="3.75 2.5 0.5" rotation="0 -270 0" name="WallFloor2_18" obj-model="obj: #WallFloor2_18-obj; mtl: #WallFloor2_18-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.25 2.51 -4.5" rotation="0 -180 0" name="WallFloor2_17 (9)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+    <a-entity position="1.25 2.51 -5.75" rotation="0 -180 0" name="WallFloor2_24" obj-model="obj: #WallFloor2_24-obj; mtl: #WallFloor2_24-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.421 2.63 -3.25" name="Door_05" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.430999 2.63 -5.75" name="Door_05 (1)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="2.93 2.63 -3.25" rotation="0 -180 0" name="Door_05 (2)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="2.93 2.63 -5.75" rotation="0 -180 0" name="Door_05 (3)" obj-model="obj: #Door_05-obj; mtl: #Door_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.356 2.51 1.252" scale="0.4485801 1 1" rotation="0 -90.00001 0" name="WallFloor2_17 (10)" obj-model="obj: #WallFloor2_17-obj; mtl: #WallFloor2_17-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Roof">
+    <a-entity position="-1.25 5 -4.5" scale="4 1 5" name="Floor_07" obj-model="obj: #Floor_07-obj; mtl: #Floor_07-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity position="0 -2.09 0" name="Props_02" highlight>
+    <a-entity position="-1.6 4.712184 1.471" name="Bed_Table_01 (1)" obj-model="obj: #Bed_Table_01-obj; mtl: #Bed_Table_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.882 4.712184 1.475" name="Bed_Table_01" obj-model="obj: #Bed_Table_01-obj; mtl: #Bed_Table_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.734 4.712184 0.44" name="Bed1_02" obj-model="obj: #Bed1_02-obj; mtl: #Bed1_02-mtl" visible = "true"></a-entity>
+    <a-entity id="vibingButton" class="BestPicture" position="-2.419 5.982 1.679" name="Picture_08 (1)" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-image src="#vibing" width="3" height="1.5" ></a-image>
+    <a-entity position="-3.922 5.122 1.537" name="Lamp_03 (1)" obj-model="obj: #Lamp_03-obj; mtl: #Lamp_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.580709 5.124205 1.48109" name="Lamp_03" obj-model="obj: #Lamp_03-obj; mtl: #Lamp_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.7367 5.124205 1.431769" name="TV_Remote" obj-model="obj: #TV_Remote-obj; mtl: #TV_Remote-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.143 5.783 0.1639999" rotation="1.707547E-06 -23.84013 90" name="Book_03" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.281 5.742 -0.927" scale="0.45418 0.45418 0.45418" name="Flower_02" obj-model="obj: #Flower_02-obj; mtl: #Flower_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.893 4.712184 1.412" name="Flower_04" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.906 4.712184 -2.809" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.463 4.712184 -2.919" rotation="0 -45.57975 0" name="Flower_03" obj-model="obj: #Flower_03-obj; mtl: #Flower_03-mtl" visible = "true"></a-entity>
+    <a-entity id = "BestMirror" position="-0.074 5.838 -2.148" rotation="0 -270 0" name="Mirror_02" obj-model="obj: #Mirror_02-obj; mtl: #Mirror_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.081 6.633 -0.399" rotation="0 -270 0" name="Clock_04" obj-model="obj: #Clock_04-obj; mtl: #Clock_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.524 4.988602 -2.152" rotation="0 -180 0" name="Socket_02" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
+    <a-entity id = "BestTV" position="-2.68 5.685 -2.979" scale="0.77049 0.77049 0.77049" rotation="0 -180 0" name="TV" obj-model="obj: #TV-obj; mtl: #TV-mtl" visible = "true"></a-entity>
+    
+    <a-video
+    src="video.mp4"
+    width="1.25"
+    height="0.75"
+    position="-2.68 6.24 -2.859">
+
+    </a-video>
+    <a-entity position="-0.267 4.695 -0.363" rotation="0 -270 0" name="RoomFurniture_07" obj-model="obj: #RoomFurniture_07-obj; mtl: #RoomFurniture_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.71 4.712184 -1.217" scale="0.8223411 0.8223411 0.8223411" name="Catpet_03" obj-model="obj: #Catpet_03-obj; mtl: #Catpet_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.307 4.712184 1.026" rotation="0 -270 0" name="RoomFurniture_08" obj-model="obj: #RoomFurniture_08-obj; mtl: #RoomFurniture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.678 4.712184 -2.95" rotation="0 -180 0" name="RoomFurniture_06" obj-model="obj: #RoomFurniture_06-obj; mtl: #RoomFurniture_06-mtl" visible = "true"></a-entity>
+    <a-entity id="bestfriendButton" class="BestPicture" position="-3.759 5.1275 1.454" scale="0.7355401 0.73554 0.7355401" rotation="0 -356.2758 0" name="PhotoFrame" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity id="daughterButton" class="BestPicture" position="-2.98 6 1.679" name="Picture_08" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-entity id="grandkidButton" class="BestPicture" position="-3.037 6.436001 1.679001" name="Picture_07" obj-model="obj: #Picture_07-obj; mtl: #Picture_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.341 5.549 -3.177" rotation="0 -180 0" name="SwitchLight" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="3.613 6.399 -1.995" rotation="0 -270 0" name="Curtains_11" obj-model="obj: #Curtains_11-obj; mtl: #Curtains_11-mtl" visible = "true"></a-entity>
+    <a-entity position="3.606 6.191 0.498" rotation="0 -270 0" name="Curtains_10" obj-model="obj: #Curtains_10-obj; mtl: #Curtains_10-mtl" visible = "true"></a-entity>
+    <a-entity position="3.577 6.147 -7.029" rotation="0 -270 0" name="Curtains_05" obj-model="obj: #Curtains_05-obj; mtl: #Curtains_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.077 6.143 -7.004" rotation="0 -90.00001 0" name="Curtains_14" obj-model="obj: #Curtains_14-obj; mtl: #Curtains_14-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.092 6.175 -4.49" rotation="0 -90.00001 0" name="Curtains_01" obj-model="obj: #Curtains_01-obj; mtl: #Curtains_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.296 4.704 -1.45" name="Lamp_01" obj-model="obj: #Lamp_01-obj; mtl: #Lamp_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.077 6.143001 -9.504" rotation="0 -90.00001 0" name="Curtains_14 (1)" obj-model="obj: #Curtains_14-obj; mtl: #Curtains_14-mtl" visible = "true"></a-entity>
+    <a-entity position="3.642 6.167 -4.495" rotation="0 -270 0" name="Curtains_01 (1)" obj-model="obj: #Curtains_01-obj; mtl: #Curtains_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.562 6.156 -9.501" rotation="0 -270 0" name="Curtains_05 (1)" obj-model="obj: #Curtains_05-obj; mtl: #Curtains_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.556 4.712183 -6.064" name="Lamp_01 (1)" obj-model="obj: #Lamp_01-obj; mtl: #Lamp_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.5069 5.498 -7.808001" rotation="0 -287.6878 0" name="Lamp_06" obj-model="obj: #Lamp_06-obj; mtl: #Lamp_06-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.377 6.348 -5.858" name="Picture_04" obj-model="obj: #Picture_04-obj; mtl: #Picture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.322 6.648 -8.305" rotation="0 -270 0" name="Clock_03" obj-model="obj: #Clock_03-obj; mtl: #Clock_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.4929 5.5059 -8.801001" name="Flower_01" obj-model="obj: #Flower_01-obj; mtl: #Flower_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.938 4.712183 -6.056" name="Flower_07" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.3 5.489 -5.826" name="SwitchLight" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.985 4.712183 -5.914" name="Sofa_07" obj-model="obj: #Sofa_07-obj; mtl: #Sofa_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.8449 5.514 -7.843" rotation="0 -270 0" name="PC_Mouse" obj-model="obj: #PC_Mouse-obj; mtl: #PC_Mouse-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.4759 5.506 -8.305" rotation="0 -270 0" name="PC_Screen" obj-model="obj: #PC_Screen-obj; mtl: #PC_Screen-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.904 5.5119 -8.291" rotation="0 -270 0" name="PC_Keyboard" obj-model="obj: #PC_Keyboard-obj; mtl: #PC_Keyboard-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.851068 5.509895 -7.839136" rotation="0 -270 0" name="PC_Carpet" obj-model="obj: #PC_Carpet-obj; mtl: #PC_Carpet-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.921853 5.5078 -8.908" scale="0.8588299 0.85883 0.8588299" rotation="0 -285.5792 0" name="NoteBook_01" obj-model="obj: #NoteBook_01-obj; mtl: #NoteBook_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.5919 5.506 -8.989" rotation="0 -253.5026 0" name="PhotoFrame" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.5289 5.504 -7.576" rotation="0 -270 0" name="PC" obj-model="obj: #PC-obj; mtl: #PC-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.4259 4.712183 -8.344001" rotation="0 -127.8691 0" name="OfficeChair_01" obj-model="obj: #OfficeChair_01-obj; mtl: #OfficeChair_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.7509 4.712183 -8.294001" rotation="0 -270 0" name="OfficeTable_01" obj-model="obj: #OfficeTable_01-obj; mtl: #OfficeTable_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.927 4.712183 -10.555" rotation="0 -180 0" name="Fireplace_01" obj-model="obj: #Fireplace_01-obj; mtl: #Fireplace_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.199 4.845 1.688" name="Socket_02" obj-model="obj: #Socket_02-obj; mtl: #Socket_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.898 5.247 -5.342" scale="0.80838 0.80838 0.80838" name="Flower_05" obj-model="obj: #Flower_05-obj; mtl: #Flower_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.917 4.712184 -5.335" rotation="0 -90.00001 0" name="RoomFurniture_04" obj-model="obj: #RoomFurniture_04-obj; mtl: #RoomFurniture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.58 6.474 -3.324" name="Picture_01" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.948 6.214 -3.324" rotation="0 0 90.00001" name="Picture_01 (1)" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.479 5.972 -3.324" scale="0.65876 0.65876 0.65876" name="Picture_01 (2)" obj-model="obj: #Picture_01-obj; mtl: #Picture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.794 6.154 -5.858" rotation="0 0 90.00001" name="Picture_04 (1)" obj-model="obj: #Picture_04-obj; mtl: #Picture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.883 6.627 -5.858" scale="0.9353214 0.60826 0.60826" name="Picture_04 (2)" obj-model="obj: #Picture_04-obj; mtl: #Picture_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.928 4.712183 -10.452" rotation="0 -95.36189 0" name="Flower_07 (1)" obj-model="obj: #Flower_07-obj; mtl: #Flower_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.007912 5.4917 -8.141001" scale="0.78 0.78 0.78" name="Plate_07" obj-model="obj: #Plate_07-obj; mtl: #Plate_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.016212 5.16551 -8.02" scale="0.8993606 0.89936 0.8993606" rotation="0 -90.00001 0" name="Book_04" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.025 5.494 -8.52" scale="0.7790106 1.003599 0.7790106" rotation="0 -90.00001 0" name="Book_03" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.057792 5.8062 -8.468" name="Candle_03 (1)" obj-model="obj: #Candle_03-obj; mtl: #Candle_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.916112 5.1863 -8.434001" scale="0.7525206 0.7525205 0.7525199" rotation="-3.201651E-07 -357.5794 90.00001" name="Book_01" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.015212 4.839 -8.432001" scale="0.8569906 0.85699 0.8569906" rotation="0 -90.00001 0" name="Box" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.063212 5.8062 -8.279" scale="0.61174 0.61174 0.61174" name="Flower_02" obj-model="obj: #Flower_02-obj; mtl: #Flower_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.046212 4.712183 -8.27" rotation="0 -90.00001 0" name="RoomFurniture_01" obj-model="obj: #RoomFurniture_01-obj; mtl: #RoomFurniture_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.192 6.351 -5.834" scale="0.94 0.94 0.94" name="Darts" obj-model="obj: #Darts-obj; mtl: #Darts-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.983 4.712183 -7.371" scale="0.76515 0.76515 0.76515" name="Catpet_04" obj-model="obj: #Catpet_04-obj; mtl: #Catpet_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.391 5.666 -10.511" name="Candle_03" obj-model="obj: #Candle_03-obj; mtl: #Candle_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.525879 5.666 -10.49035" name="Candle_01" obj-model="obj: #Candle_01-obj; mtl: #Candle_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.347 5.669 -10.479" rotation="0 -189.0425 0" name="PhotoFrame" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.933 6.186 -10.669" rotation="0 -180 0" name="Picture_07" obj-model="obj: #Picture_07-obj; mtl: #Picture_07-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.62 6.632 -10.669" rotation="0 -180 0" name="Picture_08" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-2.559 5.669 -10.459" rotation="0 -177.403 0" name="PhotoFrame (1)" obj-model="obj: #PhotoFrame-obj; mtl: #PhotoFrame-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.165 6.672 -10.669" rotation="0 -180 90.00001" name="Picture_08 (1)" obj-model="obj: #Picture_08-obj; mtl: #Picture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.903112 5.2244 -8.415001" scale="0.643563 0.6435633 0.6435627" rotation="6.403303E-07 -5.659837 90.00001" name="Book_01 (1)" obj-model="obj: #Book_01-obj; mtl: #Book_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.057792 5.8062 -8.068001" name="Candle_03 (2)" obj-model="obj: #Candle_03-obj; mtl: #Candle_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.025 5.494 -8.4602" scale="0.7790105 1.003598 0.7790106" rotation="-6.403303E-07 -270 356.3255" name="Book_03 (1)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.025 5.494 -8.4168" scale="0.7790105 1.003598 0.7790106" rotation="-6.403303E-07 -270 356.3255" name="Book_03 (2)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.042212 5.494 -8.3753" scale="0.7790097 1.003599 0.77901" rotation="0 -90 3.675002" name="Book_03 (3)" obj-model="obj: #Book_03-obj; mtl: #Book_03-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.036212 5.166 -8.080001" scale="0.8993604 0.8993601 0.8993606" rotation="5.336086E-07 -270 2.77511" name="Book_04 (1)" obj-model="obj: #Book_04-obj; mtl: #Book_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-6.019212 4.842 -8.128" scale="0.8569903 1.078693 0.8569903" rotation="0 -81.70419 0" name="Box (1)" obj-model="obj: #Box-obj; mtl: #Box-mtl" visible = "true"></a-entity>
+    <a-entity position="3.411 4.949 -10.677" scale="0.81359 0.81359 0.81359" rotation="0 -180 0" name="Socket_01" obj-model="obj: #Socket_01-obj; mtl: #Socket_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.305 4.712183 -10.42" name="Lamp_01" obj-model="obj: #Lamp_01-obj; mtl: #Lamp_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.875 5.423 -10.497" scale="0.7483099 0.74831 0.7483099" rotation="0 -188.3342 0" name="Lamp_05" obj-model="obj: #Lamp_05-obj; mtl: #Lamp_05-mtl" visible = "true"></a-entity>
+    <a-entity position="3.395 4.699 -6.072" name="Flower_04 (1)" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="0.888 4.712183 -10.446" rotation="0 -180 0" name="RoomFurniture_06" obj-model="obj: #RoomFurniture_06-obj; mtl: #RoomFurniture_06-mtl" visible = "true"></a-entity>
+    <a-entity position="2.414 6.794 -10.586" scale="0.81644 0.81644 0.81644" rotation="0 -180 0" name="AirCondition (1)" obj-model="obj: #AirCondition-obj; mtl: #AirCondition-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.024 6.75 1.588" name="AirCondition" obj-model="obj: #AirCondition-obj; mtl: #AirCondition-mtl" visible = "true"></a-entity>
+    <a-entity position="1.709 4.712183 -10.485" scale="0.73786 0.73786 0.73786" name="Trash_01 (1)" obj-model="obj: #Trash_01-obj; mtl: #Trash_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.803 5.567 -5.819" name="SwitchLight" obj-model="obj: #SwitchLight-obj; mtl: #SwitchLight-mtl" visible = "true"></a-entity>
+    <a-entity position="0.232 5.123 -6.043" name="Lamp_02" obj-model="obj: #Lamp_02-obj; mtl: #Lamp_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.421 4.712183 -9.801999" rotation="0 -340.1753 0" name="OfficeChair_02" obj-model="obj: #OfficeChair_02-obj; mtl: #OfficeChair_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.184 5.961 -8.794" rotation="0 -90.00001 0" name="Mirror_02" obj-model="obj: #Mirror_02-obj; mtl: #Mirror_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.939 4.712183 -10.061" rotation="0 -90.00001 0" name="RoomFurniture_08" obj-model="obj: #RoomFurniture_08-obj; mtl: #RoomFurniture_08-mtl" visible = "true"></a-entity>
+    <a-entity position="0.388 4.712183 -7.287" scale="0.6840503 0.68405 0.6840503" rotation="0 -90.00001 0" name="Catpet_03" obj-model="obj: #Catpet_03-obj; mtl: #Catpet_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.967 5.43 -10.221" scale="0.6478003 0.6478 0.6478003" rotation="0 -190.9035 0" name="NoteBook_03" obj-model="obj: #NoteBook_03-obj; mtl: #NoteBook_03-mtl" visible = "true"></a-entity>
+    <a-entity position="2.024 5.423 -10.481" rotation="0 -21.76913 0" name="KubikRubik" obj-model="obj: #KubikRubik-obj; mtl: #KubikRubik-mtl" visible = "true"></a-entity>
+    <a-entity position="2.436 5.427 -10.229" rotation="0 -180 0" name="PC_Keyboard" obj-model="obj: #PC_Keyboard-obj; mtl: #PC_Keyboard-mtl" visible = "true"></a-entity>
+    <a-entity position="2.805 5.4299 -10.239" rotation="0 -180 0" name="PC_Mouse" obj-model="obj: #PC_Mouse-obj; mtl: #PC_Mouse-mtl" visible = "true"></a-entity>
+    <a-entity position="2.816284 5.425796 -10.24916" name="PC_Carpet" obj-model="obj: #PC_Carpet-obj; mtl: #PC_Carpet-mtl" visible = "true"></a-entity>
+    <a-entity position="2.4 5.421 -10.554" rotation="0 -180 0" name="PC_Screen" obj-model="obj: #PC_Screen-obj; mtl: #PC_Screen-mtl" visible = "true"></a-entity>
+    <a-entity position="3.041 4.712183 -10.282" rotation="0 -180 0" name="PC" obj-model="obj: #PC-obj; mtl: #PC-mtl" visible = "true"></a-entity>
+    <a-entity position="2.378 4.712183 -10.347" name="PC_Table" obj-model="obj: #PC_Table-obj; mtl: #PC_Table-mtl" visible = "true"></a-entity>
+    <a-entity position="0.2255447 4.712183 -6.041822" name="Bed_Table_02" obj-model="obj: #Bed_Table_02-obj; mtl: #Bed_Table_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-0.57 4.712183 -6.817" name="Bed2_03" obj-model="obj: #Bed2_03-obj; mtl: #Bed2_03-mtl" visible = "true"></a-entity>
+    <a-entity position="3.67 6.515 -0.743" rotation="0 -270 0" name="Clock_01" obj-model="obj: #Clock_01-obj; mtl: #Clock_01-mtl" visible = "true"></a-entity>
+    <a-entity position="3.328 6.397 -3.165" rotation="0 -180 0" name="Hook_02" obj-model="obj: #Hook_02-obj; mtl: #Hook_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.744 6.317 -3.178258" rotation="0 -180 0" name="Lamp_04" obj-model="obj: #Lamp_04-obj; mtl: #Lamp_04-mtl" visible = "true"></a-entity>
+    <a-entity position="0.232 6.359 -2.627" scale="0.7257803 0.72578 0.7257803" rotation="0 -90.00001 0" name="Towel_03 (1)" obj-model="obj: #Towel_03-obj; mtl: #Towel_03-mtl" visible = "true"></a-entity>
+    <a-entity position="0.175 6.209 -2.611" rotation="0 -90.00001 0" name="Radiator_02" obj-model="obj: #Radiator_02-obj; mtl: #Radiator_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.956 6.587 1.532" name="Towel_03" obj-model="obj: #Towel_03-obj; mtl: #Towel_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.693 4.712183 -3.05" scale="0.87094 0.87094 0.87094" name="Trash_01" obj-model="obj: #Trash_01-obj; mtl: #Trash_01-mtl" visible = "true"></a-entity>
+    <a-entity position="2.952333 5.987458 1.621258" name="Radiator_01" obj-model="obj: #Radiator_01-obj; mtl: #Radiator_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.12 4.733031 -1.204" rotation="0 -90.00001 0" name="Slippers" obj-model="obj: #Slippers-obj; mtl: #Slippers-mtl" visible = "true"></a-entity>
+    <a-entity position="1.132429 4.712183 -1.121303" name="ShowerCarpet_03" obj-model="obj: #ShowerCarpet_03-obj; mtl: #ShowerCarpet_03-mtl" visible = "true"></a-entity>
+    <a-entity position="0.436 5.143 -0.733" name="Boat" obj-model="obj: #Boat-obj; mtl: #Boat-mtl" visible = "true"></a-entity>
+    <a-entity position="0.081 5.505 -1.092" rotation="0 -90.00001 0" name="ShowerPart_02" obj-model="obj: #ShowerPart_02-obj; mtl: #ShowerPart_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.4662753 4.712183 -1.050966" rotation="0 -90.00001 0" name="Bath" obj-model="obj: #Bath-obj; mtl: #Bath-mtl" visible = "true"></a-entity>
+    <a-entity position="0.674 4.712183 1.193" rotation="0 -270.004 0" name="Shower_02" obj-model="obj: #Shower_02-obj; mtl: #Shower_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.423 5.447 0.989" rotation="0 -90.00001 0" name="ToiletPaper" obj-model="obj: #ToiletPaper-obj; mtl: #ToiletPaper-mtl" visible = "true"></a-entity>
+    <a-entity position="1.548 4.712183 1.477" name="Toilet_02" obj-model="obj: #Toilet_02-obj; mtl: #Toilet_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.859 4.712183 1.249" name="Toilet_01" obj-model="obj: #Toilet_01-obj; mtl: #Toilet_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0.442 5.728 -3.028" rotation="-73.40578 -56.86776 270" name="Toothbrush_02" obj-model="obj: #Toothbrush_02-obj; mtl: #Toothbrush_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.454 5.742001 -3.081" rotation="-72.00999 -123.8254 35.16581" name="Toothbrush_01" obj-model="obj: #Toothbrush_01-obj; mtl: #Toothbrush_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0.4714248 5.593349 -3.04278" name="GlassToothbrush_02" obj-model="obj: #GlassToothbrush_02-obj; mtl: #GlassToothbrush_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.851 4.699 -2.287" scale="1.155401 1.1554 1.155401" rotation="0 -90.00001 0" name="ShowerCarpet_04" obj-model="obj: #ShowerCarpet_04-obj; mtl: #ShowerCarpet_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.421 5.579 -3.064" rotation="0 -180 0" name="SoapBottle_01" obj-model="obj: #SoapBottle_01-obj; mtl: #SoapBottle_01-mtl" visible = "true"></a-entity>
+    <a-entity position="0.983 5.796 -3.169" rotation="0 -180 0" name="ShowerMirror_02" obj-model="obj: #ShowerMirror_02-obj; mtl: #ShowerMirror_02-mtl" visible = "true"></a-entity>
+    <a-entity position="0.955 4.712183 -2.905" rotation="0 -180 0" name="ShowerTable_01" obj-model="obj: #ShowerTable_01-obj; mtl: #ShowerTable_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.756 6.797 1.676" name="Rangehood" obj-model="obj: #Rangehood-obj; mtl: #Rangehood-mtl" visible = "true"></a-entity>
+    <a-entity position="3.371 4.712184 -5.406" name="Flower_04" obj-model="obj: #Flower_04-obj; mtl: #Flower_04-mtl" visible = "true"></a-entity>
+    <a-entity position="1.143 4.733031 -0.999" rotation="0 -90.00001 0" name="Slippers (1)" obj-model="obj: #Slippers-obj; mtl: #Slippers-mtl" visible = "true"></a-entity>
+    <a-entity position="0.275 6.317 -3.178258" rotation="0 -180 0" name="Lamp_04 (1)" obj-model="obj: #Lamp_04-obj; mtl: #Lamp_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.556 4.712183 -10.428" name="Lamp_01 (2)" obj-model="obj: #Lamp_01-obj; mtl: #Lamp_01-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Light_Objects_01">
+    <a-entity position="-1.22 2.508 -9.14" name="Light_04 (1)" obj-model="obj: #Light_04-obj; mtl: #Light_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.832 2.509 -4.497" name="Light_01 (1)" obj-model="obj: #Light_01-obj; mtl: #Light_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-5.0742 2.507 -1.52" name="Light_01 (2)" obj-model="obj: #Light_01-obj; mtl: #Light_01-mtl" visible = "true"></a-entity>
+    <a-entity position="1.219 2.507 -0.809" name="Light_05 (2)" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="2.436 2.503 -4.497" name="Light_01" obj-model="obj: #Light_01-obj; mtl: #Light_01-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.681 2.507 -0.8090001" name="Light_05 (1)" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.22 2.508 -9.968" name="Light_04" obj-model="obj: #Light_04-obj; mtl: #Light_04-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.353 2.501 -8.562" scale="1 0.7717 1" name="Light_03" obj-model="obj: #Light_03-obj; mtl: #Light_03-mtl" visible = "true"></a-entity>
+    <a-entity position="1.358 2.504 -8.259" name="Light_05" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-entity name="Light_Objects_02">
+    <a-entity position="-3.38 5.004 -8.21" name="Light_05" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.33 5.005 -8.43" name="Light_05 (1)" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-3.902 5.007 -0.96" name="Light_05 (2)" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="-1.57 5.007 -0.96" name="Light_05 (3)" obj-model="obj: #Light_05-obj; mtl: #Light_05-mtl" visible = "true"></a-entity>
+    <a-entity position="1.877903 5.008 -1.932" name="Light_02" obj-model="obj: #Light_02-obj; mtl: #Light_02-mtl" visible = "true"></a-entity>
+    <a-entity position="1.877903 5.008 0.303" name="Light_02 (1)" obj-model="obj: #Light_02-obj; mtl: #Light_02-mtl" visible = "true"></a-entity>
+    <a-entity position="2.676 5.006 -4.61" name="Light_02 (2)" obj-model="obj: #Light_02-obj; mtl: #Light_02-mtl" visible = "true"></a-entity>
+    <a-entity position="-4.933 5.012 -4.61" name="Light_02 (3)" obj-model="obj: #Light_02-obj; mtl: #Light_02-mtl" visible = "true"></a-entity>
+  </a-entity>
+  <a-light name="AmbientLight" type="ambient" color="#363942"></a-light>
+  <a-entity id="ui">
+    <a-entity
+          id="infoPanel"
+          position="0 0 0.5"
+          info-panel
+          visible="false"
+          scale="0.001 0.001 0.001"
+          geometry="primitive: plane; width: 1.5; height: 1.8"
+          material="color: #333333; shader: flat; transparent: false" class="raycastable">
+          <a-entity id="vibingImage" mixin="movieImage" material="src: #vibing" visible="false"></a-entity>
+          <a-entity id="bestfriendImage" mixin="movieImage" material="src: #bestfriend" visible="false"></a-entity>
+          <a-entity id="daughterImage" mixin="movieImage" material="src: #daughter" visible="false"></a-entity>
+          <a-entity id="grandkidImage" mixin="movieImage" material="src: #grandkid" visible="false"></a-entity>
+          <a-entity id="movieTitle"
+            position="-0.68 -0.1 0"
+            text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"></a-entity>
+          <a-entity id="movieDescription"
+            position="-0.68 -0.2 0"
+            text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a-entity>
+        </a-entity>
+  </a-entity>
+</a-scene>
+</body>
+</html>

@@ -1,0 +1,9 @@
+newmtl LowPolyInterior_BG
+Kd 0.745283 0.745283 0.745283
+illum 2
+
+newmtl LowPolyInterior_MAIN
+Kd 1 1 1
+map_Kd null
+illum 2
+
